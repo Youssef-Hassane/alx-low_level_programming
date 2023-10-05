@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -s $CFILE    #Utilizing the -c option in order to compile a C file without linking it
