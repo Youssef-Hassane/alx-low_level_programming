@@ -1,6 +1,5 @@
 /**
  * Youssef Hassane
- *
  */
 #include <stdio.h>
 /**
