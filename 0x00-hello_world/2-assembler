@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S $CFILE    #Utilizing the -c option in order to compile a C file without linking it
+gcc -S $CFILE    #Utilizing the -s option in order to generate the assembly code from a C source
