@@ -2,8 +2,8 @@
 
 /**
  * main - Entry point
- *
  * Return: Always 0 (Success)
+ * By Youssef Hassane
  */
 int main(void)
 {
