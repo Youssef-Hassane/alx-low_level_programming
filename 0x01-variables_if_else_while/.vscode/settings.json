@@ -1,4 +1,7 @@
 {
   "prettier.trailingComma": "none",
-  "prettier.bracketSpacing": false
+  "prettier.bracketSpacing": false,
+  "files.associations": {
+    "stdio.h": "c"
+  }
 }
