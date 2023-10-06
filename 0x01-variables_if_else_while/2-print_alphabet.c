@@ -24,7 +24,8 @@ char *alphabet[] = {
 /* Obtaining the length of array */
 int lengthOfArray = sizeof(alphabet) / sizeof(alphabet[0]);
 /* Utilizing the for loop in order to print the alphabet characters */
-for (int i = 0; i < lengthOfArray; i++)
+int i;
+for (i = 0; i < lengthOfArray; i++)
 {
 const char *eachCharacter = alphabet[i];
 putchar(*eachCharacter);
