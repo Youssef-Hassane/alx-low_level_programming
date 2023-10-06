@@ -29,7 +29,8 @@ for (i = 0; i < lengthOfArray; i++)
 {
 const char *eachCharacter = alphabet[i];
 putchar(*eachCharacter);
-}
 
+}
+putchar('\n');
 return (0);
 }
