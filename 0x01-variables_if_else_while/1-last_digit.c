@@ -32,20 +32,20 @@ theLastDigitOfN = n % 10;
 
 if (theLastDigitOfN > 5)
 {
-printf("Last digit of %i is %i and is greater than 5 \n",
+printf("Last digit of %i is %i and is greater than 5\n",
 n, theLastDigitOfN);
 }
 /* If the last digit of n is less than 6 and not 0:*/
 /* the string and is less than 6 and not 0 */
 else if (theLastDigitOfN < 0 && theLastDigitOfN != 0)
 {
-printf("Last digit of %i is %i and is less than 6 and not 0 \n",
+printf("Last digit of %i is %i and is less than 6 and not 0\n",
 n, theLastDigitOfN);
 }
 /* if the last digit of n is 0: the string and is 0 */
 else
 {
-printf("Last digit of %i is %i and is 0 \n",
+printf("Last digit of %i is %i and is 0\n",
 n, theLastDigitOfN);
 }
 
