@@ -3,7 +3,9 @@
   "prettier.bracketSpacing": false,
   "files.associations": {
     "stdio.h": "c",
-    "__locale": "c"
+    "__locale": "c",
+    "random": "c",
+    "sstream": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
