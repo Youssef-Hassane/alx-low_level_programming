@@ -2,6 +2,8 @@
   "prettier.trailingComma": "none",
   "prettier.bracketSpacing": false,
   "files.associations": {
-    "stdio.h": "c"
-  }
+    "stdio.h": "c",
+    "__locale": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
