@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /**
  * main - Entry point
@@ -37,27 +35,4 @@ putchar(*eachCharacter2);
 }
 putchar('\n');
 return (0);
-/* =========================================  */
-/**
- * Another Way - to prints all the alphabet characters:
- * by utilizing only the for loop
- *
- * char charactersOfTheAlphabet;
- * for (charactersOfTheAlphabet = 'a';
- * charactersOfTheAlphabet <= 'z';
- * charactersOfTheAlphabet++)
- * {
- * putchar(charactersOfTheAlphabet);
- * }
- * for (charactersOfTheAlphabet = 'A';
- * charactersOfTheAlphabet <= 'Z';
- * charactersOfTheAlphabet++)
- * {
- * putchar(charactersOfTheAlphabet);
- * }
- * putchar('\n');
-*/
-/* =========================================  */
-
-
 }
