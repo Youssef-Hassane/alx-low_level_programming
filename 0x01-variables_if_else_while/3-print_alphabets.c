@@ -42,8 +42,8 @@ putchar(*eachCharacter);
 }
 for (n = 0; n < lengthOfArrayUppercase; n++)
 {
-const char *eachCharacter = alphabetUppercase[n];
-putchar(*eachCharacter);
+const char *eachCharacter2 = alphabetUppercase[n];
+putchar(*eachCharacter2);
 }
 putchar('\n');
 
