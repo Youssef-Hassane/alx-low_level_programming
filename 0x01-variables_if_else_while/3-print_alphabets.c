@@ -39,10 +39,11 @@ for (i = 0; i < lengthOfArray; i++)
 const char *eachCharacter = alphabet[i];
 putchar(*eachCharacter);
 }
-int num;
-for (num = 0; num < lengthOfArrayUppercase; num++)
+
+int n;
+for (n = 0; n < lengthOfArrayUppercase; n++)
 {
-const char *eachCharacter = alphabetUppercase[num];
+const char *eachCharacter = alphabetUppercase[n];
 putchar(*eachCharacter);
 }
 putchar('\n');
