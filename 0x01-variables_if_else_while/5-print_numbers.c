@@ -10,12 +10,10 @@
  */
 int main(void)
 {
-char charactersOfAlphabet;
 /*
  * Utilizing the for loop in order to all single digit numbers
  * of base 10 starting from 0
  */
-
 int num;
 for (num = 0; num < 10; num++)
 {
