@@ -16,7 +16,9 @@ int firstNumber, secondNumber;
 
 for (firstNumber = 0; firstNumber < 9; firstNumber++)
 {
-for (secondNumber = firstNumber + 1; secondNumber < 10; secondNumber++)
+
+secondNumber = firstNumber + 1;
+while (secondNumber < 10)
 {
 putchar((firstNumber % 10) + '0');
 putchar((secondNumber % 10) + '0');
@@ -26,6 +28,7 @@ break;
 
 putchar(',');
 putchar(' ');
+secondNumber++;
 }
 }
 putchar('\n');
