@@ -32,5 +32,21 @@ putchar(*eachCharacter);
 
 }
 putchar('\n');
+
+/* =========================================  */
+/**
+ * Another Way - to prints all the alphabet characters:
+ *
+ * char charactersOfTheAlphabet;
+ * for (charactersOfTheAlphabet = 'a';
+ * charactersOfTheAlphabet <= 'z';
+ * charactersOfTheAlphabet++)
+ * {
+ * putchar(charactersOfTheAlphabet);
+ * }
+ * putchar('\n');
+*/
+/* =========================================  */
+
 return (0);
 }
