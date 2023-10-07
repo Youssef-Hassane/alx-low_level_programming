@@ -11,7 +11,7 @@
 int main(void)
 {
 char charactersOfTheAlphabetReverse;
-char charactersOfTheAlphabetReverse2;
+
 /*Utilizing the for loop in order to print the alphabet characters in reverse*/
 for (charactersOfTheAlphabetReverse = 'z';
 charactersOfTheAlphabetReverse >= 'a';
@@ -29,6 +29,7 @@ return (0);
  * Another Way - to prints all the alphabet characters in reverse:
  * by utilizing only the while loop
  *
+ * char charactersOfTheAlphabetReverse2;
  * Util.. the while loop in order to print the alphabet characters in reverse
  * charactersOfTheAlphabetReverse2 = 'z';
  * while (charactersOfTheAlphabetReverse2 >= 'a')
