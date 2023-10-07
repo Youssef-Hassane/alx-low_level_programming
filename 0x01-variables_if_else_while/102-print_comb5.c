@@ -18,7 +18,7 @@ int number_1, number_2;
 for (number_1 = 0; number_1 <= 98; number_1++)
 {
 number_2 = number_1 + 1;
-for (number_2 <= 99)
+while (number_2 <= 99)
 {
 putchar((number_1 / 10) + '0');
 putchar((number_1 % 10) + '0');
