@@ -34,13 +34,12 @@ int lengthOfArrayUppercase = sizeof(alphabetUppercase) / sizeof(alphabetUppercas
 
 /* Utilizing the for loop in order to print the alphabet characters */
 int i;
+int n;
 for (i = 0; i < lengthOfArray; i++)
 {
 const char *eachCharacter = alphabet[i];
 putchar(*eachCharacter);
 }
-
-int n;
 for (n = 0; n < lengthOfArrayUppercase; n++)
 {
 const char *eachCharacter = alphabetUppercase[n];
