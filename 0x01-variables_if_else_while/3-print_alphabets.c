@@ -4,7 +4,7 @@
  * Return: Always 0 (Success)
  * --------------------------
  * Write a program that prints the alphabet in lowercase,
- * followed by a new line.
+ * and then in uppercase, followed by a new line.
  * --------------------------
  * By Youssef Hassane
  */
