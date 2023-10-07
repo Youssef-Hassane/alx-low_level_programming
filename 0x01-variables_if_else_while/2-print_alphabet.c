@@ -36,6 +36,7 @@ putchar('\n');
 /* =========================================  */
 /**
  * Another Way - to prints all the alphabet characters:
+ * by utilizing only the for loop
  *
  * char charactersOfTheAlphabet;
  * for (charactersOfTheAlphabet = 'a';
