@@ -5,7 +5,8 @@
     "stdio.h": "c",
     "__locale": "c",
     "random": "c",
-    "sstream": "c"
+    "sstream": "c",
+    "ratio": "c"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
