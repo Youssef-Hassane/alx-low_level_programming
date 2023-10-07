@@ -18,7 +18,7 @@ charactersOfAlphabet <= 'z';
 charactersOfAlphabet++)
 {
 /* Print all the letters except q and e */
-if (charactersOfAlphabet != "q" && charactersOfAlphabet != "e")
+if (charactersOfAlphabet != 'q' && charactersOfAlphabet != 'e')
 {
 putchar(charactersOfAlphabet);
 }
