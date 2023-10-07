@@ -16,7 +16,7 @@ char charactersOfAlphabet;
  * of base 10 starting from 0
  */
 
-int num:
+int num;
 for (num = 0; num < 10; num++)
 {
 putchar(num);
