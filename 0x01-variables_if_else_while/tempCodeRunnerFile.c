@@ -1,1 +1,0 @@
-secondNumber = firstNumber + 1
