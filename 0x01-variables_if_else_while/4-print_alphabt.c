@@ -11,18 +11,18 @@
  */
 int main(void)
 {
-char charactersOfAlphabet;
-/* Utilizing the for loop in order to print the alphabet characters */
-for (charactersOfAlphabet = 'a';
-charactersOfAlphabet <= 'z';
-charactersOfAlphabet++)
-{
-/* Print all the letters except q and e */
-if (charactersOfAlphabet != 'q' && charactersOfAlphabet != 'e')
-{
-putchar(charactersOfAlphabet);
-}
-}
-putchar('\n');
-return (0);
+	char charactersOfAlphabet;
+	/* Utilizing the for loop in order to print the alphabet characters */
+	for (charactersOfAlphabet = 'a';
+	     charactersOfAlphabet <= 'z';
+	     charactersOfAlphabet++)
+	{
+		/* Print all the letters except q and e */
+		if (charactersOfAlphabet != 'q' && charactersOfAlphabet != 'e')
+		{
+			putchar(charactersOfAlphabet);
+		}
+	}
+	putchar('\n');
+	return (0);
 }
