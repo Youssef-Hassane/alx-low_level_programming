@@ -13,30 +13,31 @@
  * each time it is executed. Complete the source code in order
  * to print whether the number stored in the variable n is
  * positive or negative.
+ *
  * --------------------------
  * By Youssef Hassane
  */
 int main(void)
 {
-int n;
+	int n;
 
-srand(time(0));
-n = rand() - RAND_MAX / 2;
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-/* if the number is greater than 0: is positive */
-if (n > 0)
-{
-printf("%i is positive\n", n);
-}
-/* if the number is less than 0: is negative */
-else if (n < 0)
-{
-printf("%i is negative\n", n);
-}
-/* if the number is 0: is zero */
-else
-{
-printf("%i is zero\n", n);
-}
-return (0);
+	/* if the number is greater than 0: is positive */
+	if (n > 0)
+	{
+		printf("%i is positive\n", n);
+	}
+	/* if the number is less than 0: is negative */
+	else if (n < 0)
+	{
+		printf("%i is negative\n", n);
+	}
+	/* if the number is 0: is zero */
+	else
+	{
+		printf("%i is zero\n", n);
+	}
+	return (0);
 }

@@ -23,8 +23,8 @@ while (number_2 <= 99)
 putchar((number_1 / 10) + '0');
 putchar((number_1 % 10) + '0');
 putchar(' ');
-putchar((number_2 / 10) + '0');
-putchar((number_2 % 10) + '0');
+	putchar((number_2 / 10) + '0');
+	 putchar((number_2 % 10) + '0');
 
 if (number_1 == 98 && number_2 == 99)
 {
