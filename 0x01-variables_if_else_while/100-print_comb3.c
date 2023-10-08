@@ -12,26 +12,26 @@
 
 int main(void)
 {
-int firstNumber, secondNumber;
+	int firstNumber, secondNumber;
 
-for (firstNumber = 0; firstNumber < 9; firstNumber++)
-{
+	for (firstNumber = 0; firstNumber < 9; firstNumber++)
+	{
 
-secondNumber = firstNumber + 1;
-while (secondNumber < 10)
-{
-putchar((firstNumber % 10) + '0');
-putchar((secondNumber % 10) + '0');
+		secondNumber = firstNumber + 1;
+		while (secondNumber < 10)
+		{
+			putchar((firstNumber % 10) + '0');
+			putchar((secondNumber % 10) + '0');
 
-if (firstNumber == 8 && secondNumber == 9)
-break;
+			if (firstNumber == 8 && secondNumber == 9)
+				break;
 
-putchar(',');
-putchar(' ');
-secondNumber++;
-}
-}
-putchar('\n');
+			putchar(',');
+			putchar(' ');
+			secondNumber++;
+		}
+	}
+	putchar('\n');
 
-return (0);
+	return (0);
 }
