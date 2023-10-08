@@ -10,21 +10,21 @@
  */
 int main(void)
 {
-char charactersOfTheAlphabet;
-/* Utilizing the for loop in order to print the alphabet characters */
-for (charactersOfTheAlphabet = 'a';
-charactersOfTheAlphabet <= 'z';
-charactersOfTheAlphabet++)
-{
-putchar(charactersOfTheAlphabet);
-}
-/* Utilizing the for loop in order to print the alphabet characters */
-for (charactersOfTheAlphabet = 'A';
-charactersOfTheAlphabet <= 'Z';
-charactersOfTheAlphabet++)
-{
-putchar(charactersOfTheAlphabet);
-}
-putchar('\n');
-return (0);
+	char charactersOfTheAlphabet;
+	/* Utilizing the for loop in order to print the alphabet characters */
+	for (charactersOfTheAlphabet = 'a';
+	     charactersOfTheAlphabet <= 'z';
+	     charactersOfTheAlphabet++)
+	{
+		putchar(charactersOfTheAlphabet);
+	}
+	/* Utilizing the for loop in order to print the alphabet characters */
+	for (charactersOfTheAlphabet = 'A';
+	     charactersOfTheAlphabet <= 'Z';
+	     charactersOfTheAlphabet++)
+	{
+		putchar(charactersOfTheAlphabet);
+	}
+	putchar('\n');
+	return (0);
 }
