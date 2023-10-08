@@ -10,15 +10,16 @@
  */
 int main(void)
 {
-/*
- * Utilizing the for loop in order to all single digit numbers
- * of base 10 starting from 0
- */
-int num;
-for (num = 0; num < 10; num++)
-{
-printf("%i", num);
-}
-putchar('\n');
-return (0);
+	/*
+	 * Utilizing the for loop in order to all single digit numbers
+	 * of base 10 starting from 0
+	 */
+	int num;
+
+	for (num = 0; num < 10; num++)
+	{
+		printf("%i", num);
+	}
+	putchar('\n');
+	return (0);
 }
