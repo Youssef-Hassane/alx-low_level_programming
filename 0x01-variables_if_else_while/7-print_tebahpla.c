@@ -10,18 +10,21 @@
  */
 int main(void)
 {
-char charactersOfTheAlphabetReverse;
+	char charactersOfTheAlphabetReverse;
 
-/*Utilizing the for loop in order to print the alphabet characters in reverse*/
-for (charactersOfTheAlphabetReverse = 'z';
-charactersOfTheAlphabetReverse >= 'a';
-charactersOfTheAlphabetReverse--)
-{
-putchar(charactersOfTheAlphabetReverse);
-}
+	/*
+	 * Utilizing the for loop in order to print the alphabet
+	 * characters in reverse
+	 */
+	for (charactersOfTheAlphabetReverse = 'z';
+	     charactersOfTheAlphabetReverse >= 'a';
+	     charactersOfTheAlphabetReverse--)
+	{
+		putchar(charactersOfTheAlphabetReverse);
+	}
 
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
 
 /* =========================================  */
@@ -38,5 +41,5 @@ return (0);
  * charactersOfTheAlphabetReverse2--;
  * }
  * putchar('\n');
-*/
+ */
 /* =========================================  */
