@@ -8,6 +8,7 @@
 		"bitset": "c",
 		"unordered_map": "c",
 		"chrono": "c",
-		"algorithm": "c"
+		"algorithm": "c",
+		"ratio": "c"
 	}
 }
