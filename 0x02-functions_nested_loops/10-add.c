@@ -8,7 +8,7 @@
  * @firstNumber: Given number.
  * @secondNumber: Number
  *
- * Return: the last digit of a number
+ * Return: the result of the function
  * --------------------------
  * Write a function that adds two integers
  * and returns the result.

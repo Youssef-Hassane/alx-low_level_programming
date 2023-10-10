@@ -5,7 +5,7 @@
  * jack_bauer - prints every minute of the day.
  *
  *
- * Return: the last digit of a number
+ * Return: the number of minutes of the day
  * --------------------------
  * Write a function that prints every minute of the day of Jack Bauer,
  * starting from 00:00 to 23:59.

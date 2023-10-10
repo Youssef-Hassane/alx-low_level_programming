@@ -6,7 +6,7 @@
  * starting with 0.
  *
  *
- * Return: the last digit of a number
+ * Return: the number of times
  * --------------------------
  * Write a function that prints the 9 times table, starting with 0.
  * --------------------------
