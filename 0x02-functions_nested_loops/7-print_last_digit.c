@@ -21,8 +21,11 @@ int print_last_digit(int num)
 	{
 		last_number = (num % 10) * -1;
 	}
+	else
+	{
+		last_number = num % 10;
+	}
 
-	last_number = num % 10;
 	_putchar(last_number + '0');
 	return (last_number);
 }
