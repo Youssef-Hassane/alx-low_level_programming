@@ -4,7 +4,6 @@
 /**
  * jack_bauer - prints every minute of the day.
  *
- * @num: Given number.
  *
  * Return: the last digit of a number
  * --------------------------
