@@ -15,20 +15,20 @@
  * --------------------------
  * By Youssef Hassane
  */
-void print_times_table(int n)
+void print_times_table(int number)
 {
-	int i, j, result;
+	int rowNumber, columnNumber, result;
 
-	if (n < 0 || n > 15)
+	if (number < 0 || number > 15)
 		return;
 
-	for (i = 0; i <= n; i++)
+	for (rowNumber = 0; rowNumber <= number; rowNumber++)
 	{
-		for (j = 0; j <= n; j++)
+		for (columnNumber = 0; columnNumber <= number; columnNumber++)
 		{
-			result = i * j;
+			result = rowNumber * columnNumber;
 
-			if (j == 0)
+			if (columnNumber == 0)
 				_putchar('0');
 			else
 			{
