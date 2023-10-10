@@ -19,11 +19,9 @@
 void print_times_table(int givenNumber)
 {
 	int rowNumber, columnNumber, result;
-
 	/* Check if the givenNumber is within the valid range (0 to 15) */
 	if (givenNumber < 0 || givenNumber > 15)
 		return;
-
 	/* Loop through each row */
 	for (rowNumber = 0; rowNumber <= givenNumber; rowNumber++)
 	{
@@ -32,7 +30,6 @@ void print_times_table(int givenNumber)
 		{
 			/* Calculate the product of rowNumber and columnNumber */
 			result = rowNumber * columnNumber;
-
 			/* Print the result with proper formatting */
 			if (columnNumber == 0)
 				_putchar('0');
@@ -40,19 +37,16 @@ void print_times_table(int givenNumber)
 			{
 				_putchar(',');
 				_putchar(' ');
-
 				/* Add leading spaces for proper alignment */
 				if (result < 10)
 					_putchar(' ');
 				if (result < 100)
 					_putchar(' ');
-
 				/* Print the result with proper formatting (hundreds, tens, ones) */
 				if (result >= 100)
 					_putchar(result / 100 + '0');
 				if (result >= 10)
 					_putchar((result / 10) % 10 + '0');
-
 				_putchar(result % 10 + '0');
 			}
 		}
