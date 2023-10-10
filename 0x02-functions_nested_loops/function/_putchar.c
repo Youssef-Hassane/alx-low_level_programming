@@ -10,7 +10,7 @@
 /**
  * _putchar - Writes a character to stdout.
  *
- * @c: The character to write.
+ * @character: The character to write.
  *
  * Return: On success, 1. On error, -1 is returned, and errno is set
  *         appropriately.
@@ -24,7 +24,7 @@
  * --------------------------
  * By Youssef Hassane
  */
-int _putchar(char c)
+int _putchar(char character)
 {
-	return (putchar(c));
+	return (putchar(character));
 }
