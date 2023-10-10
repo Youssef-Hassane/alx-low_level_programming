@@ -3,6 +3,11 @@
 		"cstdio": "c",
 		"unistd.h": "c",
 		"main.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"__bit_reference": "c",
+		"bitset": "c",
+		"unordered_map": "c",
+		"chrono": "c",
+		"algorithm": "c"
 	}
 }
