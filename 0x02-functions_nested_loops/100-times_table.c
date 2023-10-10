@@ -6,7 +6,7 @@
  *
  *
  * starting with 0.
- * @n: Given number.
+ * @givenNumber: Given number.
  *
  * Return: the last digit of a number
  * --------------------------
@@ -15,16 +15,16 @@
  * --------------------------
  * By Youssef Hassane
  */
-void print_times_table(int number)
+void print_times_table(int givenNumber)
 {
 	int rowNumber, columnNumber, result;
 
-	if (number < 0 || number > 15)
+	if (givenNumber < 0 || givenNumber > 15)
 		return;
 
-	for (rowNumber = 0; rowNumber <= number; rowNumber++)
+	for (rowNumber = 0; rowNumber <= givenNumber; rowNumber++)
 	{
-		for (columnNumber = 0; columnNumber <= number; columnNumber++)
+		for (columnNumber = 0; columnNumber <= givenNumber; columnNumber++)
 		{
 			result = rowNumber * columnNumber;
 
