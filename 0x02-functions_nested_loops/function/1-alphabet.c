@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "function/main.h"
+#include "main.h"
 
 /**
- * main - prints the english alphabet from a-z
+ * print_alphabet - prints the english alphabet from a-z
  * Return: Always 0 (Success)
  * --------------------------
  * Write a function that prints the alphabet, in lowercase, followed by
@@ -13,8 +13,13 @@
  * By Youssef Hassane
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char character;
+
+	for (character = 'a'; character <= 'z'; character++)
+	{
+		_putchar(character);
+	}
+	_putchar('\n');
 }
