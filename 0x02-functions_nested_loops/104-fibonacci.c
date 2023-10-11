@@ -44,13 +44,17 @@ int main(void)
  */
 int theFirst98Fibonacci(void)
 {
-int count;
+	/* Initialize variables */
+	int count;
 	unsigned long i, j, k;
 	unsigned long m, n, p, carry;
 
+	/* Initialize count and first two Fibonacci numbers */
 	count = 0;
 	i = 0;
 	j = 1;
+
+	/* Generate and print Fibonacci numbers up to the 91st number */
 	for (count = 1; count <= 91; count++)
 	{
 		k = i + j;
@@ -58,10 +62,14 @@ int count;
 		j = k;
 		printf("%lu, ", k);
 	}
+
+	/* Prepare for handling larger numbers (grouping by 3 digits) */
 	m = i % 1000;
 	i = i / 1000;
 	n = j % 1000;
 	j = j / 1000;
+
+	/* Generate and print the remaining Fibonacci numbers (92nd to 98th) */
 	while (count <= 98)
 	{
 		carry = (m + n) / 1000;
@@ -71,14 +79,21 @@ int count;
 		n = p;
 		i = j;
 		j = k;
+
+		/* Format and print the current Fibonacci number */
 		if (p >= 100)
 			printf("%lu%lu", k, p);
 		else
 			printf("%lu0%lu", k, p);
+
+		/* Add a comma and space unless it's the last number */
 		if (count != 98)
 			printf(", ");
+
 		count++;
 	}
+
+	/* Print a newline character and return 0 to indicate success */
 	putchar('\n');
 	return (0);
 }
