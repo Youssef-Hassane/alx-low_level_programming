@@ -44,11 +44,9 @@ int main(void)
  */
 int theFirst98Fibonacci(void)
 {
-	int count;
+int count;
 	unsigned long i, j, k;
 	unsigned long m, n, p, carry;
-	/* Initialize the sum of even Fibonacci numbers to 0 */
-	unsigned long evenSum = 0;
 
 	count = 0;
 	i = 0;
@@ -56,19 +54,10 @@ int theFirst98Fibonacci(void)
 	for (count = 1; count <= 91; count++)
 	{
 		k = i + j;
-		if (k % 2 == 0)
-		{
-			/* Add even Fibonacci numbers to the sum */
-			evenSum += k;
-		}
 		i = j;
 		j = k;
 		printf("%lu, ", k);
 	}
-
-	/* Calculate the sum of even Fibonacci numbers */
-
-	/* Rest of the code remains the same */
 	m = i % 1000;
 	i = i / 1000;
 	n = j % 1000;
@@ -90,7 +79,6 @@ int theFirst98Fibonacci(void)
 			printf(", ");
 		count++;
 	}
-
-	/* Print the sum of even Fibonacci numbers */
-	printf("%lu\n", evenSum);
+	putchar('\n');
+	return (0);
 }
