@@ -46,45 +46,45 @@ int theFirst98Fibonacci(void)
 {
 	/* Initialize variables */
 	int count;
-	unsigned long i, j, k;
-	unsigned long m, n, p, carry;
+	unsigned long current1, current2, next;
+	unsigned long current1Thousands, current2Thousands, nextThousands, carry;
 
 	/* Initialize count and first two Fibonacci numbers */
 	count = 0;
-	i = 0;
-	j = 1;
+	current1 = 0;
+	current2 = 1;
 
 	/* Generate and print Fibonacci numbers up to the 91st number */
 	for (count = 1; count <= 91; count++)
 	{
-		k = i + j;
-		i = j;
-		j = k;
-		printf("%lu, ", k);
+		next = current1 + current2;
+		current1 = current2;
+		current2 = next;
+		printf("%lu, ", next);
 	}
 
 	/* Prepare for handling larger numbers (grouping by 3 digits) */
-	m = i % 1000;
-	i = i / 1000;
-	n = j % 1000;
-	j = j / 1000;
+	current1Thousands = current1 % 1000;
+	current1 = current1 / 1000;
+	current2Thousands = current2 % 1000;
+	current2 = current2 / 1000;
 
 	/* Generate and print the remaining Fibonacci numbers (92nd to 98th) */
 	while (count <= 98)
 	{
-		carry = (m + n) / 1000;
-		p = (m + n) - carry * 1000;
-		k = (i + j) + carry;
-		m = n;
-		n = p;
-		i = j;
-		j = k;
+		carry = (current1Thousands + current2Thousands) / 1000;
+		nextThousands = (current1Thousands + current2Thousands) - carry * 1000;
+		next = (current1 + current2) + carry;
+		current1Thousands = current2Thousands;
+		current2Thousands = nextThousands;
+		current1 = current2;
+		current2 = next;
 
 		/* Format and print the current Fibonacci number */
-		if (p >= 100)
-			printf("%lu%lu", k, p);
+		if (nextThousands >= 100)
+			printf("%lu%lu", next, nextThousands);
 		else
-			printf("%lu0%lu", k, p);
+			printf("%lu0%lu", next, nextThousands);
 
 		/* Add a comma and space unless it's the last number */
 		if (count != 98)
