@@ -41,12 +41,13 @@ int main(void)
  */
 int theFirst98Fibonacci(void)
 {
+	int i;
 	unsigned long int a = 1, b = 2;
 
 	/* Print the first two Fibonacci numbers without a comma */
 	printf("%lu, %lu", a, b);
 
-	for (int i = 2; i < 98; i++)
+	for (i = 2; i < 98; i++)
 	{
 		/* Calculate the next Fibonacci number */
 		unsigned long int next = a + b;
