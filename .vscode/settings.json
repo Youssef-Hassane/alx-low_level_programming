@@ -11,5 +11,6 @@
 		"algorithm": "c",
 		"ratio": "c",
 		"functional": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }
