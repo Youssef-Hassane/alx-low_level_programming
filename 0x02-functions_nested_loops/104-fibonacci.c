@@ -14,7 +14,11 @@ int main(void)
 
 	return (0);
 }
-
+/**
+ * printFirst98Fibonacci - Entry point of the program
+ *
+ * Return: Always 0
+ */
 void printFirst98Fibonacci(void)
 {
 	int count;
