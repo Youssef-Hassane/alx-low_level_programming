@@ -19,10 +19,10 @@
 int main(void)
 {
 	int i;
-	int n = 50;
 	/* Number of Fibonacci numbers to print */
-	unsigned long long int a = 1, b = 2;
+	int n = 50;
 	/* Initial Fibonacci numbers */
+	unsigned long long int a = 1, b = 2;
 
 	/* Print the first two Fibonacci numbers without a comma */
 	printf("%llu, %llu", a, b);
