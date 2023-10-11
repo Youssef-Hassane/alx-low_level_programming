@@ -20,15 +20,16 @@ int main(void)
 {
 	int theLimit = 1024;
 	int theSum = 0;
+	int num;
 
 	/* Iterate through numbers from 0 to theLimit - 1 */
-	for (int i = 0; i < theLimit; i++)
+	for (num = 0; num < theLimit; num++)
 	{
 		/* Check if the current number is a multiple of 3 or 5 */
-		if (i % 3 == 0 || i % 5 == 0)
+		if (num % 3 == 0 || num % 5 == 0)
 		{
 			/* If it is, add it to the sum */
-			theSum += i;
+			theSum += num;
 		}
 	}
 
