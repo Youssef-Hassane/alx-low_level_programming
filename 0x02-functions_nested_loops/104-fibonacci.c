@@ -42,11 +42,12 @@ int main(void)
  * --------------------------
  * By Youssef Hassane
  */
-void theFirst98Fibonacci(void)
+int theFirst98Fibonacci(void)
 {
 	int count;
 	unsigned long i, j, k;
 	unsigned long m, n, p, carry;
+	/* Initialize the sum of even Fibonacci numbers to 0 */
 	unsigned long evenSum = 0;
 
 	count = 0;
@@ -57,6 +58,7 @@ void theFirst98Fibonacci(void)
 		k = i + j;
 		if (k % 2 == 0)
 		{
+			/* Add even Fibonacci numbers to the sum */
 			evenSum += k;
 		}
 		i = j;
@@ -64,5 +66,31 @@ void theFirst98Fibonacci(void)
 		printf("%lu, ", k);
 	}
 
-	printf(" %lu\n", evenSum);
+	/* Calculate the sum of even Fibonacci numbers */
+
+	/* Rest of the code remains the same */
+	m = i % 1000;
+	i = i / 1000;
+	n = j % 1000;
+	j = j / 1000;
+	while (count <= 98)
+	{
+		carry = (m + n) / 1000;
+		p = (m + n) - carry * 1000;
+		k = (i + j) + carry;
+		m = n;
+		n = p;
+		i = j;
+		j = k;
+		if (p >= 100)
+			printf("%lu%lu", k, p);
+		else
+			printf("%lu0%lu", k, p);
+		if (count != 98)
+			printf(", ");
+		count++;
+	}
+
+	/* Print the sum of even Fibonacci numbers */
+	printf("%lu\n", evenSum);
 }
