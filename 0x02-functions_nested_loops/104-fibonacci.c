@@ -7,6 +7,16 @@
  */
 int main(void)
 {
+	void printFirst98Fibonacci(void);
+
+	/* Call the function to print the first 98 Fibonacci numbers */
+	printFirst98Fibonacci();
+
+	return (0);
+}
+
+void printFirst98Fibonacci(void)
+{
 	int count;
 	unsigned long i, j, k;
 	unsigned long m, n, p, carry;
