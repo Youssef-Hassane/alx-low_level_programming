@@ -57,5 +57,4 @@ void printFirst98Fibonacci(void)
 		count++;
 	}
 	putchar('\n');
-	return (0);
 }
