@@ -19,8 +19,10 @@
  */
 int main(void)
 {
+	int theFirst98Fibonacci(void);
 	theFirst98Fibonacci();
 }
+
 /**
  * theFirst98Fibonacci - Write a program that prints the first
  * 50 Fibonacci numbers,
