@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_sign - prints the sign of a number
+ * _isalpha - prints the sign of a number
  *
  * @num: ASCii value.
  *
@@ -17,7 +17,7 @@
  * By Youssef Hassane
  */
 
-int print_sign(int num)
+int _isalpha(int num)
 {
 	if ((num >= 'a' && num <= 'z') || (num >= 'A' && num <= 'Z'))
 	{
