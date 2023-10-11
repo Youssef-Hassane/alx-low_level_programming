@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
  * main - Write a program that prints the first 50 Fibonacci numbers,
  * starting with 0.
@@ -20,6 +19,7 @@
  */
 int main(void)
 {
+	int theFirst98Fibonacci(void);
 	theFirst98Fibonacci();
 	return (0);
 }
