@@ -24,7 +24,7 @@ void printFirst98Fibonacci(void)
 	/* Print the first two Fibonacci numbers without a comma */
 	printf("%lu, %lu", a, b);
 
-	for (i = 1; i <= 91; i++)
+	for (i = 1; i <= 98; i++)
 	{
 		/* Calculate the next Fibonacci number */
 		unsigned long int next = a + b;
