@@ -19,8 +19,8 @@
  */
 int main(void)
 {
-	int theFirst98Fibonacci(void);
 	theFirst98Fibonacci();
+	return (0);
 }
 
 /**
