@@ -46,8 +46,9 @@ int theFirst98Fibonacci(void)
 {
 	/* Initialize variables */
 	int count;
-	unsigned long current1, current2, next;
-	unsigned long current1Thousands, current2Thousands, nextThousands, carry;
+	unsigned long current1, current2, next, current1Thousands,
+	current2Thousands, nextThousands, carry;
+
 
 	/* Initialize count and first two Fibonacci numbers */
 	count = 0;
