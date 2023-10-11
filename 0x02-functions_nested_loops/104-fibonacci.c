@@ -7,6 +7,7 @@
  */
 int main(void)
 {
+	void printFirst98Fibonacci(void);
 	/* Call the function to print the first 98 Fibonacci numbers */
 	printFirst98Fibonacci();
 	return (0);
