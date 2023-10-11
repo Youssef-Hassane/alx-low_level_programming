@@ -25,7 +25,7 @@ int main(void)
 	unsigned long int a = 1, b = 2;
 
 	/* Print the first two Fibonacci numbers without a comma */
-	printf("%llu, %llu", a, b);
+	printf("%lu, %lu", a, b);
 
 	/* Calculate and print the next Fibonacci numbers */
 	for (i = 2; i < n; i++)
@@ -34,7 +34,7 @@ int main(void)
 		unsigned long int next = a + b;
 
 		/* Print the comma and space separator, then the next Fibonacci number */
-		printf(", %llu", next);
+		printf(", %lu", next);
 
 		/* Update 'a' and 'b' for the next iteration */
 		a = b;
