@@ -4,7 +4,7 @@
 /**
  * _isalpha - prints the sign of a number
  *
- * @num: ASCii value.
+ * @c: ASCii value.
  *
  * Return: 1 if c is lowercase or Returns 0 otherwise
  * --------------------------
@@ -16,9 +16,9 @@
  * By Youssef Hassane
  */
 
-int _isalpha(int num)
+int _isalpha(int c)
 {
-	if (num >= 'A' && num <= 'Z')
+	if (c >= 'A' && c <= 'Z')
 	{
 		return (1);
 	}
