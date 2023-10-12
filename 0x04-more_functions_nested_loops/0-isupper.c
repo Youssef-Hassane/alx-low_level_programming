@@ -6,7 +6,7 @@
  *
  * @num: ASCii value.
  *
- * Return: 1 if c is uppercase
+ * Return: 1 if c is lowercase or Returns 0 otherwise
  * --------------------------
  * Write a function that checks for uppercase character.
  * Prototype: int _isupper(int c);
@@ -22,7 +22,7 @@ int _isalpha(int num)
 	{
 		return (1);
 	}
-	else
+	else if (num >= 'a' && num <= 'z')
 	{
 		return (0);
 	}
