@@ -15,8 +15,9 @@ int print_numbers(void)
 {
 	int number;
 
-	for (number = 0; i < 10; i++)
+	for (number = 0; number < 10; number++)
 	{
-		_putchar("%i", number);
+		_putchar("%d", number);
 	}
+	_putchar("\n");
 }
