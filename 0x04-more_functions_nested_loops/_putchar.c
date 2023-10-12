@@ -24,7 +24,9 @@
  * --------------------------
  * By Youssef Hassane
  */
+
+
 int _putchar(char character)
 {
-	return (putchar(character));
+	return (write(1, &character, 1));
 }
