@@ -18,11 +18,11 @@
 
 int _isalpha(int num)
 {
-	if (num >= 'A' && num <= 'Z')
+	if (num >= 65 && num <= 90)
 	{
 		return (1);
 	}
-	else if (num >= 'a' && num <= 'z')
+	else
 	{
 		return (0);
 	}
