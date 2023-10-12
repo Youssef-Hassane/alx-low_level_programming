@@ -17,7 +17,7 @@ int mul(int firstNumber, int secondNumber)
 {
 	int result;
 
-	result = (firstNumber * secondNumber);
+	result = firstNumber * secondNumber;
 
 	return (result);
 }
