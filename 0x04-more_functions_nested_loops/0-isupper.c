@@ -18,7 +18,7 @@
 
 int _isalpha(int num)
 {
-	if (num >= 65 && num <= 90)
+	if (num >= 'A' && num <= 'Z')
 	{
 		return (1);
 	}
