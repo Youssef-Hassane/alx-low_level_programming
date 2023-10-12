@@ -24,7 +24,11 @@ void print_square(int size)
 {
 	int row, column;
 
-	if (size > 0)
+	if (size <= 0)
+	{
+		_putchar('\n');
+	}
+	else
 	{
 		for (row = 1; row <= size; row++)
 		{
@@ -34,9 +38,5 @@ void print_square(int size)
 			}
 			_putchar('\n');
 		}
-	}
-	else
-	{
-		_putchar('\n');
 	}
 }
