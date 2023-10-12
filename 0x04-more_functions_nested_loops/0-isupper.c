@@ -15,7 +15,7 @@
  * By Youssef Hassane
  */
 
-int _isalpha(int c)
+int _isupper(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{
