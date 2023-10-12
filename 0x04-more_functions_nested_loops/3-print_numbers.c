@@ -11,7 +11,7 @@
  * By Youssef Hassane
  */
 
-int print_numbers(void)
+void print_numbers(void)
 {
 	int number;
 
