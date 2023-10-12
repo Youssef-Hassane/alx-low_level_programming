@@ -10,7 +10,8 @@
 		"chrono": "c",
 		"algorithm": "c",
 		"ratio": "c",
-		"functional": "c"
+		"functional": "c",
+		"__locale": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }
