@@ -3,7 +3,7 @@
 /**
  * print_numbers - Write a function that prints the numbers,
  * from 0 to 9, followed by a new line.
- * Return: 1
+ * Return: void
  * --------------------------
  * Write a function that prints the numbers,
  * from 0 to 9, followed by a new line.
@@ -13,9 +13,9 @@
 
 void print_numbers(void)
 {
-	int number;
+	int number = 48;
 
-	for (number = 48; number < 58; number++)
+	for (; number < 58; number++)
 	{
 		_putchar(number);
 	}
