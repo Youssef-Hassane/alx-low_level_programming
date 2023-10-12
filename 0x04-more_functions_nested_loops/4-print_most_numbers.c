@@ -15,15 +15,15 @@
  */
 void print_most_numbers(void)
 {
-	int number;
+	int num;
 
-	for (number = 0; number < 9; number++)
+	for (num = 48; num < 58; num++)
 	{
-		if (number == 2 && number == 4)
+		if ((num == 50) || (num == 52))
 		{
-			break;
+			continue;
 		}
-		_putchar(number);
+		putchar(num);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
