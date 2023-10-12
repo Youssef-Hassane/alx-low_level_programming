@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * _isalpha - prints the sign of a number
+ * _isupper - prints the sign of a number
  *
- * @c: ASCii value.
+ * @num: ASCii value.
  *
  * Return: 1 if c is lowercase or Returns 0 otherwise
  * --------------------------
@@ -15,9 +15,9 @@
  * By Youssef Hassane
  */
 
-int _isupper(int c)
+int _isupper(int num)
 {
-	if (c >= 'A' && c <= 'Z')
+	if (num >= 'A' && num <= 'Z')
 	{
 		return (1);
 	}
