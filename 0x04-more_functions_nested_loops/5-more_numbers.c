@@ -25,7 +25,9 @@ void more_numbers(void)
 		for (secondNumber = 0; secondNumber < 15; secondNumber++)
 		{
 			if (secondNumber >= 10)
+			{
 				_putchar('1');
+			}
 			_putchar(secondNumber % 10 + '0');
 		}
 		_putchar('\n');
