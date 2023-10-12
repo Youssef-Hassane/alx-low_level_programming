@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_numbers - Write a function that prints the numbers,
@@ -10,14 +11,13 @@
  * --------------------------
  * By Youssef Hassane
  */
-
 void print_numbers(void)
 {
-	int number = 48;
+	int number;
 
-	for (; number < 58; number++)
+	for (number = 48; number < 58; number++)
 	{
-		_putchar(number);
+		putchar(number);
 	}
-	_putchar(10);
+	putchar('\n');
 }
