@@ -12,32 +12,23 @@
 
 int main(void)
 {
-	/* The number you want to find the largest prime factor of. */
 	long number = 612852475143;
-	/* Increment variable for looping. */
-	int increment;
+	int inc;
 
-	while (increment++ < number / 2)
+	while (inc++ < number / 2)
 	{
-		if (number % increment == 0)
+		if (number % inc == 0)
 		{
-			/* Divide the number by 2 if it's divisible by 2. */
 			number /= 2;
-			/* Skip the rest of the loop and go to the next iteration. */
 			continue;
 		}
 
-		for (increment = 3; increment < number / 2; increment += 2)
+		for (inc = 3; inc < number / 2; inc += 2)
 		{
-			if (number % increment == 0)
-			{
-				/* Divide the number by the current factor 'Increment' */
-				/* if it's divisible by 'Increment'. */
-				number /= Increment;
-			}
+			if (number % inc == 0)
+				number /= inc;
 		}
 	}
-	/* Print the largest prime factor. */
 	printf("%ld\n", number);
 	return (0);
 }
