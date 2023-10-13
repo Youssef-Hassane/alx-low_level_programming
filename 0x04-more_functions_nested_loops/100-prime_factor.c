@@ -12,27 +12,32 @@
 
 int main(void)
 {
-	/* The original number to find the largest prime factor of. */
-	long originalNumber = 612852475143;
-	/* A copy of the original number to work with. */
-	long number = originalNumber;
-	/* Initialize the divisor to 2. */
-	int divisor = 2;
+	/* The number you want to find the largest prime factor of. */
+	long number = 612852475143;
+	/* Increment variable for looping. */
+	int increment;
 
-	while (divisor <= number)
+	while (increment++ < number / 2)
 	{
-		if (number % divisor == 0)
+		if (number % increment == 0)
 		{
-			/* If the divisor divides the number, update the number by dividing it. */
-			number /= divisor;
+			/* Divide the number by 2 if it's divisible by 2. */
+			number /= 2;
+			/* Skip the rest of the loop and go to the next iteration. */
+			continue;
 		}
-		else
+
+		for (increment = 3; increment < number / 2; increment += 2)
 		{
-			/* If the divisor doesn't divide the number, increment the divisor. */
-			divisor++;
+			if (number % increment == 0)
+			{
+				/* Divide the number by the current factor 'Increment' */
+				/* if it's divisible by 'Increment'. */
+				number /= Increment;
+			}
 		}
 	}
-
-	printf("The largest prime factor of %ld is %ld\n", originalNumber, number);
+	/* Print the largest prime factor. */
+	printf("%ld\n", number);
 	return (0);
 }
