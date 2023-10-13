@@ -25,7 +25,6 @@ int main(void)
 		{
 			printf("FizzBuzz");
 		}
-
 		else if (number % 3 == 0)
 		{
 			printf("Fizz");
