@@ -33,6 +33,6 @@ int main(void)
 		}
 	}
 
-	printf("%ld\n", number);
+	printf("The largest prime factor of %ld is %ld\n", originalNumber, number);
 	return (0);
 }
