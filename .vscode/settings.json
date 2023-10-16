@@ -13,7 +13,9 @@
 		"functional": "c",
 		"__locale": "c",
 		"random": "c",
-		"string": "c"
+		"string": "c",
+		"ios": "c",
+		"sstream": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
