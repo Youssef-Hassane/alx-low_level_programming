@@ -26,10 +26,10 @@ void rev_string(char *string)
 	{
 		/* Swap the characters at the 'start' and 'end' */
 		/* positions using a temporary variable 'temp.' */
-		char temp = s[start];
+		char temp = string[start];
 
-		s[start] = s[end];
-		s[end] = temp;
+		string[start] = string[end];
+		string[end] = temp;
 
 		/* Move 'start' to the right and 'end' to the left to continue swapping. */
 		start++;
