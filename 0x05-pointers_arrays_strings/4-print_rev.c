@@ -29,5 +29,5 @@ void print_rev(char *string)
 		_putchar(string[num]);
 	}
 	/* Print a new line character to create a newline in the output. */
-	_putchar('\n');
+	_putchar('\n'); 
 }
