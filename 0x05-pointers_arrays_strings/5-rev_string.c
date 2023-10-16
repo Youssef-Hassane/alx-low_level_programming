@@ -25,7 +25,7 @@ void rev_string(char *string)
 	/* Start from the last character and print in reverse order. */
 	for (; num >= 0; num--)
 	{
-		_putchar(string[num]);
+		string[num];
 	}
 	/* Print a new line character to create a newline in the output. */
 	_putchar('\n');
