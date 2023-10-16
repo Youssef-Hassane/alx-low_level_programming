@@ -13,5 +13,6 @@
 		"functional": "c",
 		"__locale": "c"
 	},
-	"C_Cpp.errorSquiggles": "disabled"
+	"C_Cpp.errorSquiggles": "disabled",
+	"editor.defaultFormatter": "moufidayoub11.betty-extension"
 }
