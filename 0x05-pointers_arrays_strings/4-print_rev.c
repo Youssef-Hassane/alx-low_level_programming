@@ -20,7 +20,9 @@ void print_rev(char *string)
 		length++;
 	}
 
-	int num = length - 1;
+	int num;
+
+	num = length - 1;
 	/* Start from the last character and print in reverse order. */
 	for (; num >= 0; num--)
 	{
