@@ -14,13 +14,12 @@
 void print_rev(char *string)
 {
 	int length = 0;
+	int num;
 	/* Calculate the length of the string. */
 	while (string[length] != '\0')
 	{
 		length++;
 	}
-
-	int num;
 
 	num = length - 1;
 	/* Start from the last character and print in reverse order. */
