@@ -19,7 +19,7 @@ int _strlen(char *string)
 	/* length of the string, starting from 0. */
 	int length = 0;
 	/**
-	 * Use a while loop to iterate through the characters of the string.
+	 * Utilizing a while loop to iterate through the characters of the string.
 	 * while (*string): This is a while loop that continues as
 	 * long as the character pointed to by s is not the null
 	 * terminator ('\0'). The null terminator marks the end of
