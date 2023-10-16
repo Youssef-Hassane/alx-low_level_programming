@@ -3,5 +3,6 @@
 
 void reset_to_98(int *number);
 void swap_int(int *firstInt, int *secondInt);
+int _strlen(char *s);
 
 #endif
