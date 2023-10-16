@@ -6,5 +6,6 @@ void reset_to_98(int *number);
 void swap_int(int *firstInt, int *secondInt);
 int _strlen(char *string);
 void _puts(char *string);
+void print_rev(char *string);
 
 #endif
