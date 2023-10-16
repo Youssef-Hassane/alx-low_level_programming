@@ -6,7 +6,7 @@
  * pointer to an int as parameter and updates
  * the value it points to to 98.
  * Return: void
- * @n: number of bytes written
+ * @number: number of bytes written
  * --------------------------
  * Write a function that takes a
  * pointer to an int as parameter and updates
@@ -15,7 +15,8 @@
  * By Youssef Hassane
  */
 
-void reset_to_98(int *n)
+void reset_to_98(int *number)
 {
-	*n = 98;
+	/* Set the value at the memory location pointed to by 'number' to 98. */
+	*number = 98;
 }

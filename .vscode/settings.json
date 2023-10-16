@@ -11,7 +11,8 @@
 		"algorithm": "c",
 		"ratio": "c",
 		"functional": "c",
-		"__locale": "c"
+		"__locale": "c",
+		"random": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
