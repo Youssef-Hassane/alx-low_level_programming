@@ -18,7 +18,6 @@ int _strlen(char *string)
 	/* Initialize a variable 'length' to store the  */
 	/* length of the string, starting from 0. */
 	int length = 0;
-
 	/**
 	 * Use a while loop to iterate through the characters of the string.
 	 * while (*string): This is a while loop that continues as
@@ -31,7 +30,6 @@ int _strlen(char *string)
 	{
 		/* For each character, increment the 'length' variable. */
 		length++;
-
 		/* Move the 'string' pointer to the next character in the string. */
 		string++;
 	}
