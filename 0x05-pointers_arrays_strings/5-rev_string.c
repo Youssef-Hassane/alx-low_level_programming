@@ -13,7 +13,7 @@
  */
 void rev_string(char *string)
 {
-	_strlen(char string);
+	_strlen(string);
 
 	/* Initialize two pointers, 'start' and 'end,' */
 	/* to the beginning and end of the string. */
