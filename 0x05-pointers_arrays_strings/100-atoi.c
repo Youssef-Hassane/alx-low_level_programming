@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <limits.h>
-#include <stdbool.h>
+
 /**
 * _atoi - Write a function that convert a string to an integer.
 * Prototype: int _atoi(char *s);
@@ -24,43 +23,27 @@
 */
 int _atoi(char *string)
 {
-	int result = 0;
-	int sign = 1;
+	short boolean;
+	int i, minus, result;
 
-	while (*string != '\0')
+	i = minus = result = boolean = 0;
+	minus = -1;
+
+	while (s[i] != '\0')
 	{
-		if (*string == '-')
-		{
-			sign = -1;
-		}
-		else if (*string == '+')
-		{
-			sign = 1;
-		}
-		else if (*string >= '0' && *string <= '9')
-		{
-			int digit = *string - '0';
+		if (s[i] == '-')
+			minus *= -1;
 
-			/* Check for potential overflow before adding the next digit. */
-			if (result > (INT_MAX - digit) / 10)
-			{
-				if (sign == 1)
-					return (INT_MAX);
-				else
-					return (INT_MIN);
-			}
-
-			result = result * 10 + digit;
-		}
-		else
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			/* Stop parsing when a non-numeric character is encountered. */
+			result *= 10;
+			result -= (s[i] - '0');
+			boolean = 1;
+		}
+		else if (boolean == 1)
 			break;
-		}
-
-		string++;
+		i++;
 	}
-
-	/* Apply the sign and return the result as an integer. */
-	return (sign * result);
+	result *= minus;
+	return (result);
 }
