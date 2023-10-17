@@ -16,14 +16,16 @@
 void puts2(char *string)
 {
 	int num = 0;
-
+	/* Calculate the length of the string using the _strlen function. */
 	int length = _strlen(string);
-
+	/* Use a 'for' loop to iterate through the characters of the string. */
+	/* The 'num' is incremented by 2 in each iteration to print */
+	/* every second character. */
 	for (; num < length; num += 2)
 	{
 		_putchar(string[num]);
 	}
-
+	/* Print a new line character to create a newline in the output. */
 	_putchar('\n');
 }
 
