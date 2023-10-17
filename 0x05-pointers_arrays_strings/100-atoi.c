@@ -42,7 +42,8 @@ int _atoi(char *string)
 		else if (*string >= '0' && *string <= '9')
 		{
 			foundDigit = true;
-			int digit = *string - '0';
+			int digit;
+			digit = *string - '0';
 
 			/* Check for potential overflow before adding the next digit. */
 			if (result > (INT_MAX - digit) / 10)
