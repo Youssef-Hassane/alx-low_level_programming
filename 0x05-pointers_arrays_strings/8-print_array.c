@@ -19,7 +19,7 @@ void print_array(int *array, int numberOfElements)
 
 	for (; num < numberOfElements; num++)
 	{
-		printf("%d", array[i]);
+		printf("%d", array[num]);
 
 		if (num < numberOfElements - 1)
 		{
