@@ -24,11 +24,11 @@
 int _atoi(char *string)
 {
 	int result = 0;
-
 	int sign = 1;
+	bool foundDigit = false;
 
-	/* Skip leading non-digit characters. */
-	while (*string != '\0' && !(*string >= '0' && *string <= '9'))
+	/* Process the characters in the string. */
+	while (*string != '\0')
 	{
 		if (*string == '-')
 		{
@@ -38,27 +38,31 @@ int _atoi(char *string)
 		{
 			sign = 1;
 		}
-		string++;
-	}
-
-	/* Process the digits in the string to build the integer result. */
-	while (*string >= '0' && *string <= '9')
-	{
-		int digit = *string - '0';
-
-		/* Check for potential overflow before adding the next digit. */
-		if (result > (INT_MAX - digit) / 10)
+		else if (*string >= '0' && *string <= '9')
 		{
-			if (sign == 1)
-				return (INT_MAX);
-			else
-				return (INT_MIN);
+			foundDigit = true;
+			int digit = *string - '0';
+
+			/* Check for potential overflow before adding the next digit. */
+			if (result > (INT_MAX - digit) / 10)
+			{
+				if (sign == 1)
+					return INT_MAX;
+				else
+					return INT_MIN;
+			}
+
+			result = result * 10 + digit;
+		}
+		else if (foundDigit)
+		{
+			/* If we've already found digits, break when a non-digit character is encountered. */
+			break;
 		}
 
-		result = result * 10 + digit;
 		string++;
 	}
 
 	/* Apply the sign and return the result as an integer. */
-	return (sign * result);
+	return sign * result;
 }
