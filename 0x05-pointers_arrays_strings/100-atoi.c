@@ -24,6 +24,7 @@
 */
 int _atoi(char *string)
 {
+	int digit;
 	int result = 0;
 	int sign = 1;
 	bool foundDigit = false;
@@ -42,7 +43,7 @@ int _atoi(char *string)
 		else if (*string >= '0' && *string <= '9')
 		{
 			foundDigit = true;
-			int digit;
+			
 			digit = *string - '0';
 
 			/* Check for potential overflow before adding the next digit. */
