@@ -26,15 +26,12 @@ int _atoi(char *string)
 {
 	int result = 0;
 	int sign = 1;
-	int foundDigit = 0;
-	int digit;
 
-	/* Process the characters in the string. */
 	while (*string != '\0')
 	{
 		if (*string == '-')
 		{
-			sign *= -1;
+			sign = -1;
 		}
 		else if (*string == '+')
 		{
@@ -42,23 +39,22 @@ int _atoi(char *string)
 		}
 		else if (*string >= '0' && *string <= '9')
 		{
-			foundDigit = 1;
-			digit = *string - '0';
+			int digit = *string - '0';
 
 			/* Check for potential overflow before adding the next digit. */
 			if (result > (INT_MAX - digit) / 10)
 			{
 				if (sign == 1)
-					return INT_MAX;
+					return (INT_MAX);
 				else
-					return INT_MIN;
+					return (INT_MIN);
 			}
 
 			result = result * 10 + digit;
 		}
-		else if (foundDigit)
+		else
 		{
-			/* Stop parsing when a non-numeric character is encountered after numeric characters. */
+			/* Stop parsing when a non-numeric character is encountered. */
 			break;
 		}
 
@@ -66,5 +62,5 @@ int _atoi(char *string)
 	}
 
 	/* Apply the sign and return the result as an integer. */
-	return sign * result;
+	return (sign * result);
 }
