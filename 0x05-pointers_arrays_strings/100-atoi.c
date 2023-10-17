@@ -27,9 +27,9 @@ int _atoi(char *string)
 	short digit_found;
 
 	/* Variables for iteration, sign, and the final result */
-	int num, sign, result;
+	int sign, result;
 
-	num = sign = result = digit_found = 0;
+	sign = result = digit_found = 0;
 	/* Initialize 'sign' to -1 to handle negative numbers */
 	sign = -1;
 
