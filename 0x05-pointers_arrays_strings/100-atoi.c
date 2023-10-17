@@ -41,10 +41,8 @@ int _atoi(char *string)
 		}
 		else if (*string >= '0' && *string <= '9')
 		{
-			int digit;
-
 			foundDigit = true;
-			digit = *string - '0';
+			int digit = *string - '0';
 
 			/* Check for potential overflow before adding the next digit. */
 			if (result > (INT_MAX - digit) / 10)
@@ -67,5 +65,5 @@ int _atoi(char *string)
 	}
 
 	/* Apply the sign and return the result as an integer. */
-	return sign * result;
+	return (sign * result);
 }
