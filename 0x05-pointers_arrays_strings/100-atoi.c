@@ -4,7 +4,6 @@
 /**
 * _atoi - Write a function that convert a string to an integer.
 * Prototype: int _atoi(char *s);
-
 * The number in the string can be preceded by an infinite number of characters
 * You need to take into account all the - and + signs before the number
 * If there are no numbers in the string, the function must return 0
