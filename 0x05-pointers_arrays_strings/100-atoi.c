@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <limits.h>
+#include <stdbool.h>
 /**
 * _atoi - Write a function that convert a string to an integer.
 * Prototype: int _atoi(char *s);
