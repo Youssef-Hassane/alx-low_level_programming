@@ -17,7 +17,7 @@ void print_array(int *array, int numberOfElements)
 {
 	int num = 0;
 
-	for (; num < n; num++)
+	for (; num < numberOfElements; num++)
 	{
 		printf("%d", array[i]);
 
