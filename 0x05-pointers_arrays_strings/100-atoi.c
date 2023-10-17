@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-
+#include <limits.h>
 /**
 * _strcpy - Write a function that convert a string to an integer.
 * Prototype: int _atoi(char *s);
