@@ -15,14 +15,14 @@
  */
 void puts2(char *string)
 {
-	int num = 0;
-	/* Use a 'for' loop to iterate through the characters of the string. */
-	/* The 'num' is incremented by 2 in each */
-	/* iteration to print every second character. */
-	for (; string[num] != '\0'; num += 2)
+
+	int i = 0;
+
+	while (str[i] != '\0')
 	{
-		_putchar(string[num]);
+		_putchar(str[i]);
+		i += 2;
 	}
-	/* Print a new line character to create a newline in the output. */
+
 	_putchar('\n');
 }
