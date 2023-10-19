@@ -4,7 +4,6 @@
 /**
 * _strncpy - Write a function that copies a string.
 * Prototype: char *_strncpy(char *dest, char *src, int n);
-
 * Your function should work exactly like strncpy
 * Returns a pointer to the resulting string destination
 * --------------------------
