@@ -19,7 +19,7 @@ void reverse_array(int *array, int numberOfElementsInArray)
 	int firstElement = 0;
 	/* The lastElement variable is the last element in the array */
 	/* Utilizing n-1 in order to eliminate the null terminator (\0) */
-	int lastElement = n - 1;
+	int lastElement = numberOfElementsInArray - 1;
 
 	while (firstElement < lastElement)
 	{
