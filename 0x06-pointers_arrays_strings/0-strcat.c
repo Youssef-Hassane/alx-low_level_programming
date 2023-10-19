@@ -13,9 +13,6 @@
  * @source: The characters from src are copied to the end of the dest string.
  * Return: the starting address of the concatenated string
  * --------------------------
- * Write a function that prints half of a string,
- * followed by a new line.
- * --------------------------
  * By Youssef Hassane
  */
 
