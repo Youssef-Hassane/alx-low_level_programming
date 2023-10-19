@@ -16,7 +16,15 @@
 		"string": "c",
 		"ios": "c",
 		"sstream": "c",
-		"array": "c"
+		"array": "c",
+		"__hash_table": "c",
+		"__split_buffer": "c",
+		"deque": "c",
+		"initializer_list": "c",
+		"span": "c",
+		"string_view": "c",
+		"vector": "c",
+		"ranges": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
