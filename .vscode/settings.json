@@ -15,7 +15,8 @@
 		"random": "c",
 		"string": "c",
 		"ios": "c",
-		"sstream": "c"
+		"sstream": "c",
+		"array": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"

@@ -2,20 +2,20 @@
 #include <stdio.h>
 
 /**
-* _strncpy - Write a function that copies a string.
-* Prototype: char *_strncpy(char *dest, char *src, int n);
-* Your function should work exactly like strncpy
-* Returns a pointer to the resulting string destination
-* --------------------------
-* @destination: It is the destination string where
-* the characters from source will be added
-* @source: The characters from source are copied to
-* the end of the destination string.
-* @n: src does not need to be null-terminated if it contains n or more bytes
-* Return: the starting address of the concatenated string
-* --------------------------
-* By Youssef Hassane
-*/
+ * _strncpy - Write a function that copies a string.
+ * Prototype: char *_strncpy(char *dest, char *src, int n);
+ * Your function should work exactly like strncpy
+ * Returns a pointer to the resulting string destination
+ * --------------------------
+ * @destination: It is the destination string where
+ * the characters from source will be added
+ * @source: The characters from source are copied to
+ * the end of the destination string.
+ * @n: src does not need to be null-terminated if it contains n or more bytes
+ * Return: the starting address of the concatenated string
+ * --------------------------
+ * By Youssef Hassane
+ */
 
 char *_strncpy(char *destination, const char *source, int n)
 {
@@ -28,7 +28,8 @@ char *_strncpy(char *destination, const char *source, int n)
 		/* Copying each character from 'source' to 'destination' at position 'num' */
 		destination[num] = source[num];
 
-		/* If the end of 'source' is reached, fill the remaining 'destination' with (\0). */
+		/* If the end of 'source' is reached, */
+		/* fill the remaining 'destination' with (\0) */
 		if (source[num] == '\0')
 		{
 			while (num < n)
@@ -39,8 +40,7 @@ char *_strncpy(char *destination, const char *source, int n)
 			/* break from the for loop */
 			break;
 		}
-		
 	}
-	/* Return the starting address of 'destination'. */
+	/* Return the starting address of 'destination' */
 	return (output);
 }
