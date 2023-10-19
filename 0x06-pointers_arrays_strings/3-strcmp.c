@@ -20,7 +20,8 @@ int _strcmp(char *firstString, char *secondString)
 	int zeroVarForReturn = 0;
 
 	/* looping through both the first and second strings */
-	for (; firstString || secondString; firstString++, secondString++)
+	for (; firstString = '\0' || secondString = '\0';
+	firstString++, secondString++)
 	{
 		/* check if the first string is greater than the second string */
 		/* and if so, return the substring comparison */
