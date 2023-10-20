@@ -24,7 +24,8 @@
 		"span": "c",
 		"string_view": "c",
 		"vector": "c",
-		"ranges": "c"
+		"ranges": "c",
+		"queue": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
