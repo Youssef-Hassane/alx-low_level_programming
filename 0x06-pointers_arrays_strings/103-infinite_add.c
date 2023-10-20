@@ -12,43 +12,37 @@ char *infinite_add(char *num1, char *num2, char *result, int result_size)
 {
 	int index_num1, index_num2, index_result, carry, sum, digit;
 
-	for (index_num1 = 0; num1[index_num1]; index_num1++)
+	for (index_num1 = 0; n1[index_num1]; index_num1++)
 		;
-	for (index_num2 = 0; num2[index_num2]; index_num2++)
+	for (index_num2 = 0; n2[index_num2]; index_num2++)
 		;
-	if (index_num1 > result_size || index_num2 > result_size)
+	if (index_num1 > size_r || index_num2 > size_r)
 		return (0);
-	carry = 0;
-	index_num1 -= 1;
-	index_num2 -= 1;
-	index_result = 0;
-	while (index_result < result_size - 1)
+	sum = 0;
+	for (index_num1 -= 1, index_num2 -= 1, index_result = 0;
+	index_result < size_r - 1; index_num1--, index_num2--, index_result++)
 	{
-		sum = carry;
+		digit = sum;
 		if (index_num1 >= 0)
-			sum += num1[index_num1] - '0';
+			digit += n1[index_num1] - '0';
 		if (index_num2 >= 0)
-			sum += num2[index_num2] - '0';
-		if (index_num1 < 0 && index_num2 < 0 && sum == 0)
+			digit += n2[index_num2] - '0';
+		if (index_num1 < 0 && index_num2 < 0 && digit == 0)
+		{
 			break;
-		carry = sum / 10;
-		digit = sum % 10 + '0';
-		result[index_result] = digit;
-		index_num1--;
-		index_num2--;
-		index_result++;
+		}
+		sum = digit / 10;
+		r[index_result] = digit % 10 + '0';
 	}
-	result[index_result] = '\0';
-	if (index_num1 >= 0 || index_num2 >= 0 || carry)
+	r[index_result] = '\0';
+	if (index_num1 >= 0 || index_num2 >= 0 || m)
 		return (0);
-	index_result--;
-	while (l < k)
+	for (index_result -= 1, carry = 0; carry < index_result; index_result--,
+	carry++)
 	{
-		digit = result[index_result];
-		result[index_result] = result[l];
-		result[l] = digit;
-		index_result--;
-		l++;
+		sum = r[index_result];
+		r[index_result] = r[carry];
+		r[carry] = sum;
 	}
-	return (result);
+	return (r);
 }
