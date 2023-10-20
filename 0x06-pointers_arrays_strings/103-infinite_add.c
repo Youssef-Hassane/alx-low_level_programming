@@ -35,7 +35,7 @@ char *infinite_add(char *num1, char *num2, char *result, int result_size)
 		result[index_result] = digit % 10 + '0';
 	}
 	result[index_result] = '\0';
-	if (index_num1 >= 0 || index_num2 >= 0 || m)
+	if (index_num1 >= 0 || index_num2 >= 0 || sum)
 		return (0);
 	for (index_result -= 1, carry = 0; carry < index_result; index_result--,
 	carry++)
