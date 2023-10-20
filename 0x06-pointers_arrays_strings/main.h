@@ -9,6 +9,6 @@ int _strcmp(char *firstString, char *secondString);
 void reverse_array(int *array, int numberOfElementsInArray);
 char *string_toupper(char *characters);
 char *cap_string(char *string);
-
+char *leet(char *str);
 
 #endif
