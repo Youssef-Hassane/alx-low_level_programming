@@ -7,5 +7,8 @@ char *_strncat(char *destination, const char *source, int n);
 char *_strncpy(char *destination, const char *source, int n);
 int _strcmp(char *firstString, char *secondString);
 void reverse_array(int *array, int numberOfElementsInArray);
+char *string_toupper(char *characters);
+char *cap_string(char *string);
+
 
 #endif
