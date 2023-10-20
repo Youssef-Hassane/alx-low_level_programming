@@ -76,3 +76,4 @@ char *infinite_add(char *num1, char *num2, char *result, int result_size)
 
 	return (result);
 }
+
