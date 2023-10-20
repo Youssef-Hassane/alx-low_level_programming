@@ -4,7 +4,10 @@
 /**
  * infinite_add - Write a function that adds two numbers.
  * --------------------------------------------------------------
- * @number: The array of characters to be modified.
+ * @num1: the first number
+ * @num2: the second number
+ * @result: the result of the function call 
+ * @result_size: the size of the result buffer in bytes
  * Prototype: char *infinite_add(char *n1, char *n2, char *r, int size_r);
  * Where n1 and n2 are the two numbers
  * r is the buffer that the function will use to store the result
@@ -18,64 +21,58 @@
  * By Youssef Hassane
  */
 
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+char *infinite_add(char *num1, char *num2, char *result, int result_size)
 {
-	int len1 = 0, len2 = 0, carry = 0, sum, index;
+	int index_num1, index_num2, index_result, carry, sum, digit;
 
-	/* Calculate the lengths of n1 and n2 */
-	while (n1[len1] != '\0')
-		len1++;
-	while (n2[len2] != '\0')
-		len2++;
+	for (index_num1 = 0; num1[index_num1]; index_num1++)
+		;
+	for (index_num2 = 0; num2[index_num2]; index_num2++)
+		;
+	if (index_num1 > result_size || index_num2 > result_size)
+		return (0);
+	carry = 0;
 
-	/* Check if there is enough space in the buffer */
-	if (len1 > size_r - 1 || len2 > size_r - 1)
-		return 0;
+	index_num1 -= 1;
+	index_num2 -= 1;
+	index_result = 0;
 
-	index = 0;
-	len1--;
-	len2--;
-
-	while (len1 >= 0 || len2 >= 0 || carry)
+	while (index_result < result_size - 1)
 	{
-		int num1 = (len1 >= 0) ? n1[len1] - '0' : 0;
-		int num2 = (len2 >= 0) ? n2[len2] - '0' : 0;
-
-		sum = num1 + num2 + carry;
-
-		if (sum >= 10)
+		sum = carry;
+		if (index_num1 >= 0)
+			sum += num1[index_num1] - '0';
+		if (index_num2 >= 0)
+			sum += num2[index_num2] - '0';
+		if (index_num1 < 0 && index_num2 < 0 && sum == 0)
 		{
-			carry = 1;
-			sum -= 10;
+			break;
 		}
-		else
-		{
-			carry = 0;
-		}
+		carry = sum / 10;
+		digit = sum % 10 + '0';
+		result[index_result] = digit;
 
-		r[index] = sum + '0';
-
-		index++;
-		len1--;
-		len2--;
-	}
-	/* Null-terminate the result string */
-	r[index] = '\0';
-
-	/* Reverse the result in the buffer */
-	int i = 0;
-	int j = index - 1;
-	char temp;
-
-	while (i < j)
-	{
-		temp = r[i];
-		r[i] = r[j];
-		r[j] = temp;
-		i++;
-		j--;
+		// Update loop variables
+		index_num1--;
+		index_num2--;
+		index_result++;
 	}
 
-	/* Return a pointer to the result */
-	return (r);
+	result[index_result] = '\0';
+
+	if (index_num1 >= 0 || index_num2 >= 0 || carry)
+		return (0);
+
+	index_result--;
+
+	while (l < k)
+	{
+		digit = result[index_result];
+		result[index_result] = result[l];
+		result[l] = digit;
+		index_result--;
+		l++;
+	}
+
+	return (result);
 }
