@@ -11,11 +11,12 @@
 char *infinite_add(char *num1, char *num2, char *result, int result_size)
 {
 	int index_num1, index_num2, index_result, carry, sum, digit;
-
+	/* Calculate the length of num1 and num2 by iterating through the strings */
 	for (index_num1 = 0; num1[index_num1]; index_num1++)
 		;
 	for (index_num2 = 0; num2[index_num2]; index_num2++)
 		;
+	/* Check if the inputs are too large to fit in the result buffer */
 	if (index_num1 > result_size || index_num2 > result_size)
 		return (0);
 	sum = 0;
