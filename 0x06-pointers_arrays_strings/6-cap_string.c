@@ -2,44 +2,44 @@
 #include <stdio.h>
 
 /**
-* cap_string - Capitalizes the first letter of each word in a string.
-* @string: The string to be modified.
-* Return: A pointer to the modified string.
-*/
+ * cap_string - Write a function that capitalizes all words of a string.
+ * --------------------------
+ * @string: The array of characters to be converted to uppercase
+ * Return: A pointer to the modified string
+ * --------------------------
+ * By Youssef Hassane
+ */
+
 char *cap_string(char *string)
 {
 	int index = 0;
 
-	int capitalize_next = 1;
-
+	/* Loop through the string until the null terminator is reached */
 	while (string[index] != '\0')
 	{
-		if ((string[index] >= 'a' && string[index] <= 'z') ||
-		 (string[index] >= 'A' && string[index] <= 'Z'))
+		/* Capitalize the first letter of the string if it's a lowercase letter */
+		if (string[0] >= 97 && string[0] <= 122)
 		{
-			if (capitalize_next)
-			{
-				if (string[index] >= 'a' && string[index] <= 'z')
-				{
-					string[index] -= 32;
-				}
-				capitalize_next = 0;
-			}
-			else
-			{
-				if (string[index] >= 'A' && string[index] <= 'Z')
-				{
-					string[index] += 32;
-				}
-			}
-		}
-		else
-		{
-			capitalize_next = 1;
+			string[0] = string[0] - 32;
 		}
 
+		/* Check for various separator characters */
+		if (string[index] == ' ' || string[index] == '\t' || string[index] == '\n' ||
+		    string[index] == ',' || string[index] == ';' || string[index] == '.' ||
+		    string[index] == '.' || string[index] == '!' || string[index] == '?' ||
+		    string[index] == '"' || string[index] == '(' || string[index] == ')' ||
+		    string[index] == '{' || string[index] == '}')
+		{
+			/* If the character after the separator is a lowercase letter */
+			/* capitalize it */
+			if (string[index + 1] >= 97 && string[index + 1] <= 122)
+			{
+				string[index + 1] = string[index + 1] - 32;
+			}
+		}
+		/* Move to the next character in the string */
 		index++;
 	}
-
+	/* Return a pointer to the modified string */
 	return (string);
 }
