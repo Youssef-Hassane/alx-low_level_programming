@@ -5,7 +5,6 @@
 * --------------------------------------------------------------
 * @input_string: The array of characters to be modified.
 * Prototype: char *rot13(char *input_string);
-
 * You can only use if statement once in your code.
 * You can only use two loops in your code.
 * You are not allowed to use switch.
@@ -14,25 +13,29 @@
 * --------------------------------------------------------------
 * By Youssef Hassane
 */
+
 char *rot13(char *input_string)
 {
-	/* Store the original starting address of the input string. */
-	char *original = input_string;
+	/* Declare two integer variables for counting characters and rotation. */
+	int Count, rot;
+	/* Define two arrays that represent the original and rotated characters. */
+	char firstArray[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char secondArray[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (*input_string)
+	for (Count = 0; input_string[Count] != '\0'; Count++)
 	{
-		char character = *input_string;
-
-		if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z'))
+		for (rot = 0; rot < 53; rot++)
 		{
-			/* Determine the character case base. */
-			char base = (character >= 'a' && character <= 'z') ? 'a' : 'A';
-			/* Apply the ROT13 transformation. */
-			*input_string = (character - base + 13) % 26 + base;
+			if (firstArray[rot] == input_string[Count])
+			{
+				/* If a character in the input string matches a character in firstArray, */
+				/* replace it with the corresponding character in secondArray. */
+				input_string[Count] = secondArray[rot];
+				/* Exit the inner loop as the replacement is done. */
+				break;
+			}
 		}
-		/* Move to the next character in the input string. */
-		input_string++;
 	}
-	/* Return a pointer to the modified string (the same starting address). */
-	return original;
+	/* Return the modified input_string after applying the rot13 transformation. */
+	return (input_string);
 }
