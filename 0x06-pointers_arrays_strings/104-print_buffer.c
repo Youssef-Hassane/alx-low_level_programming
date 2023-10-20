@@ -2,10 +2,13 @@
 #include <stdio.h>
 
 /**
- * print_buffer - a function that prints a buffer.
- * @b: the buffer
- * @size: size of it
- * Return: void.
+ * print_buffer - Write a function that prints a buffer.
+ * ----------------------------------------------------------------
+ * Prototype: void print_buffer(char *b, int size);
+ * @b: The buffer to print.
+ * @size: The size of the buffer in bytes.
+ * ----------------------------------------------------------------
+ * by Youssef Hassane
  */
 
 void print_buffer(char *b, int size)
