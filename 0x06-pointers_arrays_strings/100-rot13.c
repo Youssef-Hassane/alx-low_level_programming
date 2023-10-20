@@ -16,9 +16,9 @@
 
 char *rot13(char *input_string)
 {
-	/* Declare two integer variables for counting characters and rotation. */
+	/* Declare two integer variables for counting characters and rotation */
 	int Count, rot;
-	/* Define two arrays that represent the original and rotated characters. */
+	/* Define two arrays that represent the original and rotated characters */
 	char firstArray[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char secondArray[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
@@ -28,14 +28,14 @@ char *rot13(char *input_string)
 		{
 			if (firstArray[rot] == input_string[Count])
 			{
-				/* If a character in the input string matches a character in firstArray, */
-				/* replace it with the corresponding character in secondArray. */
+				/* If a character in the input string matches a character in firstArray */
+				/* replace it with the corresponding character in secondArray */
 				input_string[Count] = secondArray[rot];
-				/* Exit the inner loop as the replacement is done. */
+				/* Exit the inner loop as the replacement is done */
 				break;
 			}
 		}
 	}
-	/* Return the modified input_string after applying the rot13 transformation. */
+	/* Return the modified input_string after applying the rot13 transformation */
 	return (input_string);
 }
