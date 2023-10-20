@@ -9,10 +9,10 @@ int _strcmp(char *firstString, char *secondString);
 void reverse_array(int *array, int numberOfElementsInArray);
 char *string_toupper(char *characters);
 char *cap_string(char *string);
-char *leet(char *str);
-char *rot13(char *);
-void print_number(int n);
-char *infinite_add(char *n1, char *n2, char *r, int size_r);
-void print_buffer(char *b, int size);
+char *leet(char *string);
+char *rot13(char *input_string);
+void print_number(int number);
+char *infinite_add(char *num1, char *num2, char *result, int result_size);
+void print_buffer(char *buffer, int size);
 
 #endif
