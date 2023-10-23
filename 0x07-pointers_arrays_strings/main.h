@@ -6,5 +6,6 @@ char *_memset(char *memoryToBeFilled,
 		  char byteValueToFill,
 		  unsigned int numberOfBytesToBeFilled);
 char *_memcpy(char *destination, char *source, unsigned int numberOfBytes);
+char *_strchr(char *string, char character);
 
 #endif
