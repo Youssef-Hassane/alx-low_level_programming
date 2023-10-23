@@ -33,5 +33,5 @@ char *_memset(char *memoryToBeFilled,
 		memoryToBeFilled[num] = byteValueToFill;
 	}
 	/* Return a pointer to the memory area memoryToBeFilled */
-	return (s);
+	return (memoryToBeFilled);
 }
