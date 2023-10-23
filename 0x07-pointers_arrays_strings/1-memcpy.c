@@ -23,7 +23,7 @@ char *_memcpy(char *destination, char *source, unsigned int numberOfBytes)
 {
 	unsigned int index; /* counter */
 
-	for (index = 0; index < n; index++)
+	for (index = 0; index < numberOfBytes; index++)
 	{
 		/* Copy data byte by byte */
 		destination[index] = source[index];
