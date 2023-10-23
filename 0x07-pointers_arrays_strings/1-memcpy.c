@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _memset - Write a function that copies memory area.
+ * _memcpy - Write a function that copies memory area.
  * Return: a pointer to the memory area s
  * --------------------------
  * Prototype: char *_memcpy(char *dest, char *src, unsigned int n);
@@ -12,13 +12,21 @@
  * FYI: The standard library provides a similar function:
  * memcpy. Run man memcpy to learn more.
  * --------------------------
- * @dest: a pointer to the memory area to be filled
- * @src: a pointer to the memory area to be copied
- * @n: the number of bytes to be copied
+ * @destination: Pointer to the memory area where data is copied to
+ * @source: Pointer to the memory area from which data is copied
+ * @numberOfBytes: The number of bytes to copy
  * --------------------------
  * By Youssef Hassane
  */
 
-char *_memset(char *dest, char src, unsigned int n)
+char *_memcpy(char *destination, char *source, unsigned int numberOfBytes)
 {
-	unsigned int i;
+	unsigned int index; /* counter */
+
+	for (index = 0; index < n; index++)
+	{
+		/* Copy data byte by byte */
+		destination[index] = source[index];
+	}
+	return (destination);
+}
