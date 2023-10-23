@@ -23,16 +23,11 @@ char *_memset(char *memoryToBeFilled,
 		  char byteValueToFill,
 		  unsigned int numberOfBytesToBeFilled)
 {
-	/* Fill the first byteValueToFill bytes of the */
-	/* memory area pointed to by memoryToBeFilled */
-	unsigned int num;
-	char *startingPoint = memoryToBeFilled;
-	/* Fill the first n bytes of the memory area pointed to by s */
-	for (num = 0; num < n; num++)
-	{
-		/* Assign byteValueToFill to the memory area pointed to by memoryToBeFilled*/
-		memoryToBeFilled[num] = byteValueToFill;
-	}
-	/* Return a pointer to the memory area memoryToBeFilled */
-	return (startingPoint);
+
+	unsigned int index;
+
+	for (index = 0; index < n; index++)
+		memoryToBeFilled[index] = numberOfBytesToBeFilled;
+
+	return (memoryToBeFilled);
 }
