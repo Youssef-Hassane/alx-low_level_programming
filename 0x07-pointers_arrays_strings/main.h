@@ -2,6 +2,8 @@
 #define MAIN_H
 
 int _putchar(char character);
-char *_memset(char *s, char b, unsigned int n)
+char *_memset(char *memoryToBeFilled,
+		  char byteValueToFill,
+		  unsigned int numberOfBytesToBeFilled);
 
 #endif
