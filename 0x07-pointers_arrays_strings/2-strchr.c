@@ -21,22 +21,21 @@
 
 char *_strchr(char *string, char character)
 {
-	/* index of the character */
-	int index;
-	/* Check if the string is NULL */
-	if (string == NULL)
+	while (*string != '\0')
 	{
-		return (NULL);
-	}
-	/* Loop through the string */
-	for (index = 0; string[index] != '\0'; index++)
-	{
-		/* Check if the character is found */
-		if (string[index] == character)
+		/* Found the character, return its address. */
+		if (*string == character)
 		{
-			/* Return a pointer to the character */
-			return (&string[index]);
+			return (string);
 		}
+		/* Go to the next character */
+		string++;
 	}
+	if (character == '\0')
+	{
+		/* Special case for searching for the null terminator. */
+		return (string);
+	}
+	/* Character not found in the string. */
 	return (NULL);
 }
