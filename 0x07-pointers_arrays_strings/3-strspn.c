@@ -23,16 +23,16 @@ unsigned int _strspn(char *string, char *accept)
 {
 	/* Initialize the count */
 	unsigned int count = 0;
-	int i;
+	int index;
 
 	while (*string)
 	{
 		/* Reset match for each character in 'string'. */
 		int match = 0;
 
-		for (i = 0; accept[i]; i++)
+		for (index = 0; accept[index]; index++)
 		{
-			if (*string == accept[i])
+			if (*string == accept[index])
 			{
 				/* Increment count if match found. */
 				count++;
@@ -43,7 +43,8 @@ unsigned int _strspn(char *string, char *accept)
 
 		if (match == 0)
 		{
-			break; /* Break if no match found. */
+			 /* Break if no match found. */
+			break;
 		}
 		string++;
 	}
