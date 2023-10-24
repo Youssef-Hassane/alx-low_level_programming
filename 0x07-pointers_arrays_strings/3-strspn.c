@@ -23,25 +23,24 @@ unsigned int _strspn(char *string, char *accept)
 {
 	/* Initialize the count */
 	unsigned int count = 0;
-
-	/* To check if a character in 'string' matches 'accept'. */
-	int match;
+	int i;
 
 	while (*string)
 	{
 		/* Reset match for each character in 'string'. */
-		match = 0;
-		while (*accept)
+		int match = 0;
+
+		for (i = 0; accept[i]; i++)
 		{
-			if (*string == *accept)
+			if (*string == accept[i])
 			{
 				/* Increment count if match found. */
 				count++;
 				match = 1;
 				break;
 			}
-			accept++;
 		}
+
 		if (match == 0)
 		{
 			break; /* Break if no match found. */
