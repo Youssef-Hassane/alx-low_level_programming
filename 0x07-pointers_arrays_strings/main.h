@@ -8,5 +8,6 @@ char *_memset(char *memoryToBeFilled,
 char *_memcpy(char *destination, char *source, unsigned int numberOfBytes);
 char *_strchr(char *string, char character);
 unsigned int _strspn(char *string, char *accept);
+char *_strpbrk(char *string, char *accept);
 
 #endif
