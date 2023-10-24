@@ -17,10 +17,10 @@ void print_chessboard(char (*a)[8])
 	/* Declare variables for the chessboard*/
 	int row, column;
 	/* Loop through each row of the chessboard */
-	for (int row = 0; row < 8; row++)
+	for (row = 0; row < 8; row++)
 	{
 		/* Loop through each column of the chessboard */
-		for (int column = 0; column < 8; column++)
+		for (column = 0; column < 8; column++)
 		{
 			/* Print the character at position (row, column)*/
 			_putchar(a[row][column]);
