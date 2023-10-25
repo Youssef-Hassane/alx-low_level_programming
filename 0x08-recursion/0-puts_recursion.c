@@ -14,7 +14,7 @@
  * By Youssef Hassane
  */
 
-void _puts_recursion(char *string);
+void _puts_recursion(char *string)
 {
 	for (; *string != '\0'; string++)
 	{
