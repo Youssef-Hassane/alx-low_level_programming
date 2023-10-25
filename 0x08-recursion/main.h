@@ -2,10 +2,10 @@
 #define MAIN_H
 
 int _putchar(char character);
-void _puts_recursion(char *s);
-void _print_rev_recursion(char *s);
-int _strlen_recursion(char *s);
-int factorial(int n);
-
+void _puts_recursion(char *string);
+void _print_rev_recursion(char *string);
+int _strlen_recursion(char *string);
+int factorial(int number);
+int _pow_recursion(int base, int power);
 
 #endif
