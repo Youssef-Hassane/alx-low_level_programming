@@ -4,7 +4,7 @@
 /**
  * factorial - Write a function that
  * returns the factorial of a given number.
- * Return: Always 0 (Success)
+ * Return: the factorial of the given number
  * --------------------------
  * Prototype: int factorial(int n);
  * @number: The number to calculate the factorial of
