@@ -10,7 +10,6 @@ int sqrt_recursive(int num, int guess);
 * Return: Always 0 (Success)
 * --------------------------
 * Prototype: int _sqrt_recursion(int n);
-
 * @number: The number for which to find the square root.
 * If n does not have a natural square root,
 * the function should return -1
@@ -37,11 +36,11 @@ int _sqrt_recursion(int number)
 }
 
 /**
-* sqrt_recursive - Helper function to find the square root recursively.
-* @num: The number for which to find the square root.
-* @guess: The current guess for the square root.
-* Return: The natural square root of n.
-*/
+ * sqrt_recursive - Helper function to find the square root recursively.
+ * @num: The number for which to find the square root.
+ * @guess: The current guess for the square root.
+ * Return: The natural square root of n.
+ */
 int sqrt_recursive(int num, int guess)
 {
 	if (guess * guess == num)
@@ -60,6 +59,6 @@ int sqrt_recursive(int num, int guess)
 	{
 		/* If the guess is less than the square root of n, call the function again */
 		/* with the new guess */
-		return sqrt_recursive(num, guess + 1);
+		return (sqrt_recursive(num, guess + 1));
 	}
 }
