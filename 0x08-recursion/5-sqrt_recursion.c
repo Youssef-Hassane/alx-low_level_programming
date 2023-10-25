@@ -5,19 +5,20 @@
 int sqrt_recursive(int num, int guess);
 
 /**
- * _sqrt_recursion - Write a function that returns
- * the natural square root of a number.
- * Return: Always 0 (Success)
- * --------------------------
- * Prototype: int _sqrt_recursion(int n);
- * @number: The number for which to find the square root.
- * If n does not have a natural square root,
- * the function should return -1
- * FYI: The standard library provides a different function:
- * sqrt. Run man sqrt to learn more.
- * --------------------------
- * By Youssef Hassane
- */
+* _sqrt_recursion - Write a function that returns
+* the natural square root of a number.
+* Return: Always 0 (Success)
+* --------------------------
+* Prototype: int _sqrt_recursion(int n);
+
+* @number: The number for which to find the square root.
+* If n does not have a natural square root,
+* the function should return -1
+* FYI: The standard library provides a different function:
+* sqrt. Run man sqrt to learn more.
+* --------------------------
+* By Youssef Hassane
+*/
 
 int _sqrt_recursion(int number)
 {
@@ -36,11 +37,11 @@ int _sqrt_recursion(int number)
 }
 
 /**
- * sqrt_recursive - Helper function to find the square root recursively.
- * @num: The number for which to find the square root.
- * @guess: The current guess for the square root.
- * Return: The natural square root of n.
- */
+* sqrt_recursive - Helper function to find the square root recursively.
+* @num: The number for which to find the square root.
+* @guess: The current guess for the square root.
+* Return: The natural square root of n.
+*/
 int sqrt_recursive(int num, int guess)
 {
 	if (guess * guess == num)
