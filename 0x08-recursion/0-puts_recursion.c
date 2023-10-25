@@ -25,5 +25,8 @@ void _puts_recursion(char *string)
 		_puts_recursion(string + 1);
 	}
 	/* else print a new line */
-	_putchar('\n');
+	if (*string == '\0')
+	{
+		_putchar('\n');
+	}
 }
