@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
 	/* iterate through each argument */
 	for (; num_1 < argc; num_1++)
 	{
+		num_2 = 0;
 		/* Store the current argument in the 'arg' variable */
 		arg = argv[num_1];
 		/* Iterate through each character in the argument */
