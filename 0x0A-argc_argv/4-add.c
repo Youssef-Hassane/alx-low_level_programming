@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 {
 
 	/* define an integer variable 'num_1' to use as a loop counter */
-	int num_1 = 0;
+	int num_1 = 1;
 	/* define an integer variable 'num_2' to use as a loop counter */
 	int num_2 = 0;
 	/* define an integer variable 'sum' to store the sum */
