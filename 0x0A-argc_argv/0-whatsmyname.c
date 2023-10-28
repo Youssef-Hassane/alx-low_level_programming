@@ -5,7 +5,7 @@
  * If you rename the program, it will print the new
  * name, without having to compile it again
  * You should not remove the path before the name of the program
- * return: Always 0 (Success)
+ * Return: Always 0 (Success)
  * --------------------------
  * The main function is the entry point of the program. It takes two arguments:
  * @argc: The number of command-line arguments passed to the program
