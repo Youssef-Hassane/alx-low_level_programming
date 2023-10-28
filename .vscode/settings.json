@@ -27,7 +27,8 @@
 		"ranges": "c",
 		"queue": "c",
 		"*.tcc": "c",
-		"complex": "c"
+		"complex": "c",
+		"stdlib.h": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
