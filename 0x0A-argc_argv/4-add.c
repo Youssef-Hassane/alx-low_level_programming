@@ -40,12 +40,12 @@ int main(int argc, char *argv[])
 	for (; num_1 < argc; num_1++)
 	{
 		/* Store the current argument in the 'arg' variable */
-		*arg = argv[i];
+		arg = argv[num_1];
 		/* Iterate through each character in the argument */
 		for (; arg[num_2] != '\0'; num_2++)
 		{
 			/* Check if the current character is not a digit */
-			if (arg[j] < '0' || arg[j] > '9')
+			if (arg[num_2] < '0' || arg[num_2] > '9')
 			{
 				/* If not, print Error and return 1 */
 				printf("Error\n");
