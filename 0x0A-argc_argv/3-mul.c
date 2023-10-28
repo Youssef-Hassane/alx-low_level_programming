@@ -14,7 +14,7 @@
  * @argc: The number of command-line arguments passed to the program.
  * @argv: An array of strings that represent the command-line arguments.
  * --------------------------
- * By [Your Name]
+ * By Youssef Hassane
  */
 
 int main(int argc, char *argv[])
