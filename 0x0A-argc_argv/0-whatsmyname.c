@@ -17,6 +17,8 @@
 
 int main(int argc, char *argv[])
 {
+	/* suppress a warning about the unused parameter argc */
+	(void)argc;
 	/* Use the printf function to print the first element of */
 	/* the argv array (the program name) followed by a newline */
 	printf("%s\n", argv[0]);
