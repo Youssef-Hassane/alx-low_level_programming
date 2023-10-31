@@ -28,8 +28,13 @@ char *_strdup(char *givenString)
 	char *theDuplicatedString = (char *)malloc(
 		_strlen_recursion(givenString) + 1
 	);
-	/* Check if the given string is NULL or if memory allocation failed */
-	if (givenString == NULL || theDuplicatedString == NULL)
+	/* Check if the given string is NULL */
+	if (givenString == NULL)
+	{
+		return (NULL);
+	}
+	/* if memory allocation failed */
+	if (theDuplicatedString == NULL)
 	{
 		return (NULL);
 	}
