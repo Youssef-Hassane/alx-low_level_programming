@@ -24,13 +24,14 @@
 
 char *_strdup(char *givenString)
 {
+	char *theDuplicatedString;
 	/* Check if the given string is NULL */
 	if (givenString == NULL)
 	{
 		return (NULL);
 	}
 	/* Allocate memory for the duplicated string */
-	char *theDuplicatedString = (char *)malloc(
+	theDuplicatedString = (char *)malloc(
 	    _strlen_recursion(givenString) + 1
 	);
 	/* if memory allocation failed */
