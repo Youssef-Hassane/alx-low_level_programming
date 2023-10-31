@@ -24,6 +24,7 @@
 
 char *_strdup(char *givenString)
 {
+	/* A pointer to the duplicated string */
 	char *theDuplicatedString;
 	/* Check if the given string is NULL */
 	if (givenString == NULL)
@@ -31,9 +32,7 @@ char *_strdup(char *givenString)
 		return (NULL);
 	}
 	/* Allocate memory for the duplicated string */
-	theDuplicatedString = (char *)malloc(
-	    _strlen_recursion(givenString) + 1
-	);
+	theDuplicatedString = (char *)malloc(_strlen_recursion(givenString) + 1);
 	/* if memory allocation failed */
 	if (theDuplicatedString == NULL)
 	{
