@@ -41,15 +41,6 @@ int **alloc_grid(int theWidthOfGrid, int theHeightOfGrid)
 	{
 		theGrid[index_1] = (int *)malloc(sizeof(int) * theWidthOfGrid);
 
-		/* Check if memory allocation failed for this row */
-		if (theGrid[index_1] == NULL)
-		{
-			/* Free previously allocated memory to avoid memory leaks */
-			for (; index_2 < index_1; index_2++)
-				free(theGrid[index_2]);
-			free(theGrid);
-			return (NULL);
-		}
 		/* Initialize elements to 0 in the current row */
 		for (index_2 = 0; index_2 < theWidthOfGrid; index_2++)
 			theGrid[index_1][index_2] = 0;
