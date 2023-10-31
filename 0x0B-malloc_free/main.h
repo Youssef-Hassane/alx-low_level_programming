@@ -9,5 +9,6 @@ char *_strcpy(char *dest, char *src);
 char *str_concat(char *theFirstString, char *theSecondString);
 char *_strcat(char *destination, char *source);
 int **alloc_grid(int theWidthOfGrid, int theHeightOfGrid);
+void free_grid(int **theGrid, int theHeightOfGrid);
 
 #endif
