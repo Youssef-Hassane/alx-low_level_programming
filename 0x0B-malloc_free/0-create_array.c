@@ -27,6 +27,11 @@ char *create_array(unsigned int theSizeOfArray, char character)
 	{
 		return (NULL);
 	}
+	/* Returns NULL if memory allocation fails (array is NULL) */
+	if (array == NULL)
+	{
+		return (NULL);
+	}
 	/* Initialize the array with the character */
 	for (; index < theSizeOfArray; index++)
 	{
