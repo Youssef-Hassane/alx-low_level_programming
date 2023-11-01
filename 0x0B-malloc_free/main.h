@@ -16,5 +16,8 @@ void copy_arguments(
 	char *result, char **argumentVector, int argumentCount,
 	int index, int current_pos
 );
+char **strtow(char *str);
+int theWordsCount(char *theGivenString);
+void free_string_array(char **arr);
 
 #endif
