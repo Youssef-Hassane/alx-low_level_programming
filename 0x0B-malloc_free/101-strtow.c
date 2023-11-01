@@ -3,6 +3,8 @@
 #include <string.h>
 #include "main.h"
 
+#define MAX_WORD_COUNT 1000
+
 /**
  * strtow - Split a string into words.
  * Return: Concatenated string
@@ -11,8 +13,7 @@
  */
 
 char **strtow(char *str)
-{
-	int num_words, i;
+{int num_words, i;
 	char **result, *word, *str_copy;
 
 	if (str == NULL || *str == '\0')
@@ -24,6 +25,8 @@ char **strtow(char *str)
 		return (result);
 	}
 	num_words = theWordsCount(str);
+	if (num_words > MAX_WORD_COUNT)
+		num_words = MAX_WORD_COUNT;
 	result = (char **)malloc((num_words + 1) * sizeof(char *));
 	if (result == NULL)
 		return (NULL);
@@ -35,7 +38,8 @@ char **strtow(char *str)
 	}
 	i = 0;
 	for (word = strtok(str_copy, " \t\n");
-	word != NULL; word = strtok(NULL, " \t\n"))
+	     word != NULL && i < MAX_WORD_COUNT;
+	     word = strtok(NULL, " \t\n"))
 	{
 		result[i] = (char *)malloc(strlen(word) + 1);
 		if (result[i] == NULL)
