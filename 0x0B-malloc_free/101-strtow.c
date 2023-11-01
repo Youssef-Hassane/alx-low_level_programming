@@ -3,8 +3,6 @@
 #include <string.h>
 #include "main.h"
 
-#define MAX_WORD_COUNT 1000
-
 /**
  * strtow - Split a string into words.
  * Return: Concatenated string
@@ -13,47 +11,47 @@
  */
 
 char **strtow(char *str)
-{int num_words, i;
-	char **result, *word, *str_copy;
+{
+	int total_words = 0, b = 0, c = 0, length = 0;
+	char **words, *found_word;
 
-	if (str == NULL || *str == '\0')
-	{
-		result = (char **)malloc(1 * sizeof(char *));
-		if (result == NULL)
-			return (NULL);
-		result[0] = NULL;
-		return (result);
-	}
-	num_words = theWordsCount(str);
-	if (num_words > MAX_WORD_COUNT)
-		num_words = MAX_WORD_COUNT;
-	result = (char **)malloc((num_words + 1) * sizeof(char *));
-	if (result == NULL)
+	if (str == 0 || *str == 0)
 		return (NULL);
-	str_copy = strdup(str);
-	if (str_copy == NULL)
-	{
-		free(result);
+	total_words = theWordsCount(str);
+	if (total_words == 0)
 		return (NULL);
-	}
-	i = 0;
-	for (word = strtok(str_copy, " \t\n");
-	     word != NULL && i < MAX_WORD_COUNT;
-	     word = strtok(NULL, " \t\n"))
+	words = malloc((total_words + 1) * sizeof(char *));
+	if (words == 0)
+		return (NULL);
+	for (; *str != '\0' &&  b < total_words;)
 	{
-		result[i] = (char *)malloc(strlen(word) + 1);
-		if (result[i] == NULL)
+		if (*str == ' ')
+			str++;
+		else
 		{
-			free_string_array(result);
-			free(str_copy);
-			return (NULL);
+			found_word = str;
+			for (; *str != ' ' && *str != '\0';)
+			{
+				length++;
+				str++;
+			}
+			words[b] = malloc((length + 1) * sizeof(char));
+			if (words[b] == 0)
+			{
+				free_string_array(words);
+				return (NULL);
+			}
+			while (*found_word != ' ' && *found_word != '\0')
+			{
+				words[b][c] = *found_word;
+				found_word++;
+				c++;
+			}
+			words[b][c] = '\0';
+			b++; c = 0; length = 0; str++;
 		}
-		strcpy(result[i], word);
-		i++;
 	}
-	free(str_copy);
-	result[i] = NULL;
-	return (result);
+	return (words);
 }
 
 /**
