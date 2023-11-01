@@ -12,22 +12,21 @@
 
 char **strtow(char *str)
 {
-	int num_words;
-	char **result;
-	int i;
-	char *word;
-	char *str_copy;
+	int num_words, i;
+	char **result, *word, *str_copy;
 
 	if (str == NULL || *str == '\0')
 	{
-		return (NULL);
+		result = (char **)malloc(1 * sizeof(char *));
+		if (result == NULL)
+			return (NULL);
+		result[0] = NULL;
+		return (result);
 	}
 	num_words = theWordsCount(str);
 	result = (char **)malloc((num_words + 1) * sizeof(char *));
 	if (result == NULL)
-	{
 		return (NULL);
-	}
 	str_copy = strdup(str);
 	if (str_copy == NULL)
 	{
