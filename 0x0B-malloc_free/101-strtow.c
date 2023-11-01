@@ -7,7 +7,7 @@
  * strtow - Split a string into words.
  * Return: Concatenated string
  * --------------------------
- * ...
+ * @str: The input string to split.
  */
 
 char **strtow(char *str)
@@ -22,24 +22,21 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
-
 	num_words = theWordsCount(str);
 	result = (char **)malloc((num_words + 1) * sizeof(char *));
-
 	if (result == NULL)
 	{
 		return (NULL);
 	}
-
 	str_copy = strdup(str);
 	if (str_copy == NULL)
 	{
 		free(result);
 		return (NULL);
 	}
-
 	i = 0;
-	for (word = strtok(str_copy, " \t\n"); word != NULL; word = strtok(NULL, " \t\n"))
+	for (word = strtok(str_copy, " \t\n");
+	word != NULL; word = strtok(NULL, " \t\n"))
 	{
 		result[i] = (char *)malloc(strlen(word) + 1);
 		if (result[i] == NULL)
@@ -51,7 +48,6 @@ char **strtow(char *str)
 		strcpy(result[i], word);
 		i++;
 	}
-
 	free(str_copy);
 	result[i] = NULL;
 	return (result);
@@ -99,7 +95,7 @@ int theWordsCount(char *theGivenString)
 }
 
 /**
- * free_str_array - Frees a string array and its elements
+ * free_string_array - Frees a string array and its elements
  * Return: Nothing
  * --------------------------
  * @array: The string array to free
