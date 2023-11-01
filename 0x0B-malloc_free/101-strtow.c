@@ -4,33 +4,36 @@
 #include "main.h"
 
 /**
- * strtow - Split a string into words.
+ * strtow - Write a function that splits
+ * a string into words.
  * Return: Concatenated string
  * --------------------------
- * @str: The input string to split.
+ * Prototype: char **strtow(char *str);
+ * The function returns a pointer to an array of strings (words)
+ * Each element of this array should contain
+ * a single word, null-terminated
+ * The last element of the returned array should be NULL
+ * Words are separated by spaces
+ * Returns NULL if str == NULL or str == ""
+ * If your function fails, it should return NULL
+ * --------------------------
+ * @str: The input string to split
+ * --------------------------
+ * By Youssef Hassane
  */
 
 char **strtow(char *str)
-{
-	int c, i, length, b, total_words;
-	const char *found_word;
-	char **words;
+{int total_words = 0, b = 0, c = 0, length = 0;
+	char **words, *found_word;
 
-	if (str == NULL || *str == '\0')
-	{
+	if (str == 0 || *str == 0)
 		return (NULL);
-	}
 	total_words = theWordsCount(str);
 	if (total_words == 0)
-	{
 		return (NULL);
-	}
-	words = (char **)malloc((total_words + 1) * sizeof(char *));
-	if (words == NULL)
-	{
+	words = malloc((total_words + 1) * sizeof(char *));
+	if (words == 0)
 		return (NULL);
-	}
-	b = 0;
 	for (; *str != '\0' && b < total_words;)
 	{
 		if (*str == ' ')
@@ -38,32 +41,28 @@ char **strtow(char *str)
 		else
 		{
 			found_word = str;
-			length = 0;
 			for (; *str != ' ' && *str != '\0';)
 			{
 				length++;
 				str++;
 			}
-			words[b] = (char *)malloc((length + 1) * sizeof(char));
-			if (words[b] == NULL)
-			{
-				for (i = 0; i < b; i++)
-					free(words[i]);
-				free(words);
-				return NULL;
+			words[b] = malloc((length + 1) * sizeof(char));
+			if (words[b] == 0)
+			{free_string_array(words);
+				return (NULL);
 			}
-			c = 0;
-			for (; *found_word != ' ' && *found_word != '\0';)
-			{
-				words[b][c] = *found_word;
+			while (*found_word != ' ' && *found_word != '\0')
+			{words[b][c] = *found_word;
 				found_word++;
 				c++;
 			}
 			words[b][c] = '\0';
 			b++;
+			c = 0;
+			length = 0;
+			str++;
 		}
 	}
-	words[b] = NULL;
 	return (words);
 }
 
