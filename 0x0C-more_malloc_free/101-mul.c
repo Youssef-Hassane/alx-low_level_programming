@@ -21,14 +21,14 @@
 int _isdigit(char *givenNumber)
 {
 	/* Loop through the characters in 'givenNumber' until the end is reached */
-	for (; *givenNumber; givenNumber++)
+	while (*givenNumber)
 	{
-		/* Check if the character at the current position is a digit */
-		if (*givenNumber < '0' && *givenNumber > '9')
+		if (*givenNumber < '0' || *givenNumber > '9')
 		{
 			/* If it's not a digit, return 0 to indicate it's not a digit */
 			return (0);
 		}
+		givenNumber++;
 	}
 	/* If all characters in 'givenNumber' are digits */
 	/* return 1 to indicate it's a digit */
