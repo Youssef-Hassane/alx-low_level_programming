@@ -29,7 +29,8 @@
 		"*.tcc": "c",
 		"complex": "c",
 		"stdlib.h": "c",
-		"string.h": "c"
+		"string.h": "c",
+		"limits": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"

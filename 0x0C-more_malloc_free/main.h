@@ -19,4 +19,6 @@ void *_calloc(
 	unsigned int numberOfMembers,
 	unsigned int theSizeOfEachElementInBytes
 );
+int *array_range(int minimumNumber, int maximumNumber);
+
 #endif
