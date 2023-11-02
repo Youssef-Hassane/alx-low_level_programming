@@ -49,4 +49,5 @@ int *array_range(int minimumNumber, int maximumNumber)
 	}
 	/* Return the pointer to the allocated memory */
 	return (theAllocatedMemory);
+	
 }
