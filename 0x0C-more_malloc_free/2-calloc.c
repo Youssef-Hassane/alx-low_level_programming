@@ -46,7 +46,7 @@ void *_calloc(
 
 	/* Allocate memory using malloc and initialize it to zero */
 	theAllocatedMemory = malloc(total_size);
-	
+
 	/* Check if malloc was successful */
 	if (theAllocatedMemory != NULL)
 	{
