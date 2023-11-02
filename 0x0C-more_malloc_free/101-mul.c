@@ -36,16 +36,16 @@ int _isdigit(char *givenNumber)
 }
 
 /**
- * multiply_numbers - Write a program that multiplies two positive numbers.
+ * multiply_two_numbers - Write a program that multiplies two positive numbers.
  * Return: Always 0 (Success)
  * --------------------------
  * Usage: mul num1 num2
  * num1 and num2 will be passed in base 10
  * Print the result, followed by a new line
- * If the number of arguments is incorrect, print Error, 
+ * If the number of arguments is incorrect, print Error,
  * followed by a new line, and exit with a status of 98
- * num1 and num2 should only be composed of digits. 
- * If not, print Error, followed by a new line, and 
+ * num1 and num2 should only be composed of digits.
+ * If not, print Error, followed by a new line, and
  * exit with a status of 98
  * --------------------------
  * @firstNumber: the first number to multiply
@@ -55,8 +55,7 @@ int _isdigit(char *givenNumber)
  */
 
 void multiply_two_numbers(char *firstNumber, char *secondNumber)
-{
-	/* Calculate the length of the first number */
+{/* Calculate the length of the first number */
 	int theLengthOfFirstNumber = _strlen_recursion(firstNumber);
 	/* Calculate the length of the second number */
 	int theLengthOfSecondNumber = _strlen_recursion(secondNumber);
@@ -66,7 +65,6 @@ void multiply_two_numbers(char *firstNumber, char *secondNumber)
 	int *result = _calloc(totalLength, sizeof(int));
 	/* Declare variables for loop and multiplication */
 	int index_1, index_2, index_3, multiplication, resultOfMult;
-
 	/* Check if memory allocation failed */
 	if (!result)
 	{
@@ -80,25 +78,23 @@ void multiply_two_numbers(char *firstNumber, char *secondNumber)
 		for (index_2 = theLengthOfSecondNumber - 1; index_2 >= 0; index_2--)
 		{
 			/* Calculate the multiplication result */
-			multiplication = (firstNumber[index_1] - '0') * (secondNumber[index_2] - '0');
-			/* Add the multiplication result to the corresponding position in the result array */
+			multiplication = (firstNumber[index_1] - '0') *
+			(secondNumber[index_2] - '0');
+			/* Add the multiplication result to the corresponding*/
+			/* position in the result array*/
 			resultOfMult = result[index_1 + index_2 + 1] + multiplication;
 			/* Update carry and store the result digit in the result array */
 			result[index_1 + index_2] += resultOfMult / 10;
 			result[index_1 + index_2 + 1] = resultOfMult % 10;
 		}
 	}
-
 	index_3 = 0;
 	/* Find the index where the result number begins */
 	while (index_3 < totalLength - 1 && result[index_3] == 0)
 		index_3++;
-	/* Print the result digits */
-	for (; index_3 < totalLength; index_3++)
+	for (; index_3 < totalLength; index_3++)/* Print the result digits */
 		printf("%d", result[index_3]);
-
 	printf("\n");
-	/* Free the allocated memory */
 	free(result);
 }
 
@@ -189,7 +185,6 @@ void *_calloc(
 	return (theAllocatedMemory);
 }
 
-
 /**
  * main - Write a program that multiplies two numbers
  * Return: Always 0 (Success)
@@ -203,12 +198,14 @@ int main(int argumentCount, char *argumentVector[])
 {
 	/* Check if the number of command-line arguments is not equal */
 	/* to 3 or if the arguments are not digits */
-	if (argumentCount != 3 || !_isdigit(argumentVector[1]) || !_isdigit(argumentVector[2])){
+	if (argumentCount != 3 || !_isdigit(argumentVector[1])
+	|| !_isdigit(argumentVector[2]))
+	{
 		printf("Error\n");
 		exit(98);
 	}
 	/* Call the 'multiply_two_numbers' function with the two input numbers */
 	multiply_two_numbers(argumentVector[1], argumentVector[2]);
 	/* Return 0 to indicate successful execution */
-	return 0;
+	return (0);
 }
