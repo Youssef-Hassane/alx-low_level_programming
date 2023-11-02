@@ -20,5 +20,7 @@ void *_calloc(
 	unsigned int theSizeOfEachElementInBytes
 );
 int *array_range(int minimumNumber, int maximumNumber);
+int _isdigit(char *givenNumber);
+void multiply_two_numbers(char *firstNumber, char *secondNumber);
 
 #endif
