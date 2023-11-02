@@ -15,5 +15,8 @@ char *_strcat(
 	char *source,
 	unsigned int theNumberOfCharactersToConcatenate
 );
-
+void *_calloc(
+	unsigned int numberOfMembers,
+	unsigned int theSizeOfEachElementInBytes
+);
 #endif
