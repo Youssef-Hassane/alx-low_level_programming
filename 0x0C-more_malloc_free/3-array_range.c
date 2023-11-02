@@ -3,14 +3,12 @@
 #include "main.h"
 
 /**
-* _calloc - Write a function that creates an array of integers.
-* Return: Always 0 (Success)
+* array_range - Write a function that creates an array of integers.
+* Return: the pointer to the newly created array
 * --------------------------
 * Prototype: int *array_range(int min, int max);
-
 * The array created should contain all the values
 * from min (included) to max (included), ordered from min to max
-* Return: the pointer to the newly created array
 * If min > max, return NULL
 * If malloc fails, return NULL
 * --------------------------
