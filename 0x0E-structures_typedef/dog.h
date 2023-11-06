@@ -21,4 +21,8 @@ void print_dog(struct dog *theDog);
 /* Define dog_t as a new name for the struct dog type */
 typedef struct dog dog_t;
 
+dog_t *new_dog(char *name, float age, char *owner);
+int _strlen_recursion(char *string);
+char *_strcpy(char *dest, char *src);
+
 #endif
