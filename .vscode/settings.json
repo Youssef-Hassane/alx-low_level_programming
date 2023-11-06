@@ -30,7 +30,8 @@
 		"complex": "c",
 		"stdlib.h": "c",
 		"string.h": "c",
-		"limits": "c"
+		"limits": "c",
+		"typeinfo": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension"
