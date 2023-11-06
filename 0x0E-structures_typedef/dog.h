@@ -20,4 +20,3 @@ void init_dog(struct dog *theDog, char *theName, float theAge, char *theOwner);
 void print_dog(struct dog *theDog);
 
 #endif
-
