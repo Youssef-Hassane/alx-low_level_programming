@@ -18,5 +18,7 @@ struct dog
 };
 void init_dog(struct dog *theDog, char *theName, float theAge, char *theOwner);
 void print_dog(struct dog *theDog);
+/* Define dog_t as a new name for the struct dog type */
+typedef struct dog dog_t;
 
 #endif
