@@ -16,7 +16,7 @@
  * -------------------------
  * By Youssef Hassane
  * -------------------------
- * (void *)0) = NULL
+ * ((void *)0) = NULL
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
