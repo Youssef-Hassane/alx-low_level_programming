@@ -33,20 +33,20 @@ int (*get_op_func(char *s))(int, int)
 	    {"/", op_div},
 	    {"%", mod},
 	    {NULL, NULL}};
-	int index = 0;
+	int i = 0;
 
 	/* Loop through the operations array to find a matching operator */
-	while (ops[index].op)
+	while (ops[i].op)
 	{
 		/* Check if the provided operator matches the current element in the array */
-		if (strcmp(s, ops[index].op) == 0)
+		if (strcmp(s, ops[i].op) == 0)
 		{
 			/* Return a pointer to the corresponding function if a match is found */
-			return (ops[index].f);
+			return (ops[i].f);
 		}
 
 		/* Move to the next element in the array */
-		index++;
+		i++;
 	}
 
 	/* If no matching operator is found, */
