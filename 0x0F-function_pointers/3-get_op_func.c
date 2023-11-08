@@ -23,7 +23,7 @@
  * By Youssef_Hassane
  */
 
-int (*get_op_func(char *operator))(int, int)
+int (*get_op_func(char *s))(int, int)
 {
 	/* Define an array of operation_t structures to map operators to functions */
 	op_t ops[] = {
@@ -39,7 +39,7 @@ int (*get_op_func(char *operator))(int, int)
 	while (ops[index].op)
 	{
 		/* Check if the provided operator matches the current element in the array */
-		if (strcmp(operator, ops[index].op) == 0)
+		if (strcmp(s, ops[index].op) == 0)
 		{
 			/* Return a pointer to the corresponding function if a match is found */
 			return (ops[index].f);
