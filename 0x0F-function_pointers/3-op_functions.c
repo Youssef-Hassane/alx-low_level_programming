@@ -5,78 +5,78 @@
  * op_add - Returns the sum of two integers
  * Return: The sum of a and b
  * --------------------
- * @firstNumber: The first integer
- * @secondNumber: The second integer
+ * @a: The first integer
+ * @b: The second integer
  * --------------------
  * By Youssef_Hassane
  */
-int op_add(int firstNumber, int secondNumber)
+int op_add(int a, int b)
 {
-	return (firstNumber + secondNumber);
+	return (a + b);
 }
 
 /**
  * op_sub - Returns the difference between two integers
  * Return: The difference of a and b
  * ------------------
- * @firstNumber: The first integer
- * @secondNumber: The second integer
+ * @a: The first integer
+ * @b: The second integer
  * ------------------
  * By Youssef_Hassane
  */
-int op_sub(int firstNumber, int secondNumber)
+int op_sub(int a, int b)
 {
-	return (firstNumber - secondNumber);
+	return (a - b);
 }
 
 /**
  * op_mul - Returns the product of two integers
  * Return: The product of a and b
  * ------------------
- * @firstNumber: The first integer
- * @secondNumber: The second integer
+ * @a: The first integer
+ * @b: The second integer
  * ------------------
  * By Youssef_Hassane
  */
-int op_mul(int firstNumber, int secondNumber)
+int op_mul(int a, int b)
 {
-	return (firstNumber * secondNumber);
+	return (a * b);
 }
 
 /**
  * op_div - Returns the result of a divided by b
  * Return: The result of a divided by b
  * ------------------
- * @firstNumber: The numerator
- * @secondNumber: The denominator
+ * @a: The numerator
+ * @b: The denominator
  * ------------------
  * By Youssef_Hassane
  */
-int op_div(int firstNumber, int secondNumber)
+int op_div(int a, int b)
 {
-	if (secondNumber == 0)
+	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	return (firstNumber / secondNumber);
+	return (a / b);
 }
 
 /**
  * mod - Returns the remainder of a divided by b
  * Return: The remainder of a divided by b
  * ------------------
- * @firstNumber: The numerator
- * @secondNumber: The denominator
+ * @a: The numerator
+ * @b: The denominator
  * ------------------
  * By Youssef_Hassane
  */
-int mod(int firstNumber, int secondNumber)
+int mod(int a, int b)
 {
-	if (secondNumber == 0)
+	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	return (firstNumber % secondNumber);
+	return (a % b);
 }
