@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	secondNumber = atoi(argv[3]);
 
 	/* Get the appropriate operation function based on the operator argument */
-	operation = get_operation_function(argv[2]);
+	operation = get_op_func(argv[2]);
 
 	/* Check if a valid operation function is found for the provided operator */
 	if (!operation)

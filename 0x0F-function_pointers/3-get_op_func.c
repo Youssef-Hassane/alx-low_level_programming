@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * get_operation_function - Selects the appropriate
+ * get_op_func - Selects the appropriate
  * function for the operation.
  * Return: A pointer to the corresponding function or NULL if not found.
  * ----------------------
@@ -23,26 +23,26 @@
  * By Youssef_Hassane
  */
 
-int (*get_operation_function(char *operator))(int, int)
+int (*get_op_func(char *operator))(int, int)
 {
 	/* Define an array of operation_t structures to map operators to functions */
-	operation_t operations[] = {
-	    {"+", add},
-	    {"-", subtract},
-	    {"*", multiply},
-	    {"/", divide},
-	    {"%", modulus},
+	op_t ops[] = {
+	    {"+", op_add},
+	    {"-", op_sub},
+	    {"*", op_mul},
+	    {"/", op_div},
+	    {"%", mod},
 	    {NULL, NULL}};
 	int index = 0;
 
 	/* Loop through the operations array to find a matching operator */
-	while (operations[index].symbol)
+	while (ops[index].op)
 	{
 		/* Check if the provided operator matches the current element in the array */
-		if (strcmp(operator, operations[index].symbol) == 0)
+		if (strcmp(operator, ops[index].op) == 0)
 		{
 			/* Return a pointer to the corresponding function if a match is found */
-			return (operations[index].function_pointer);
+			return (ops[index].f);
 		}
 
 		/* Move to the next element in the array */

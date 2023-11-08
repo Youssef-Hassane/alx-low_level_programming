@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * add - Returns the sum of two integers
+ * op_add - Returns the sum of two integers
  * Return: The sum of a and b
  * --------------------
  * @firstNumber: The first integer
@@ -10,13 +10,13 @@
  * --------------------
  * By Youssef_Hassane
  */
-int add(int firstNumber, int secondNumber)
+int op_add(int firstNumber, int secondNumber)
 {
 	return (firstNumber + secondNumber);
 }
 
 /**
- * subtract - Returns the difference between two integers
+ * op_sub - Returns the difference between two integers
  * Return: The difference of a and b
  * ------------------
  * @firstNumber: The first integer
@@ -24,13 +24,13 @@ int add(int firstNumber, int secondNumber)
  * ------------------
  * By Youssef_Hassane
  */
-int subtract(int firstNumber, int secondNumber)
+int op_sub(int firstNumber, int secondNumber)
 {
 	return (firstNumber - secondNumber);
 }
 
 /**
- * multiply - Returns the product of two integers
+ * op_mul - Returns the product of two integers
  * Return: The product of a and b
  * ------------------
  * @firstNumber: The first integer
@@ -38,13 +38,13 @@ int subtract(int firstNumber, int secondNumber)
  * ------------------
  * By Youssef_Hassane
  */
-int multiply(int firstNumber, int secondNumber)
+int op_mul(int firstNumber, int secondNumber)
 {
 	return (firstNumber * secondNumber);
 }
 
 /**
- * divide - Returns the result of a divided by b
+ * op_div - Returns the result of a divided by b
  * Return: The result of a divided by b
  * ------------------
  * @firstNumber: The numerator
@@ -52,7 +52,7 @@ int multiply(int firstNumber, int secondNumber)
  * ------------------
  * By Youssef_Hassane
  */
-int divide(int firstNumber, int secondNumber)
+int op_div(int firstNumber, int secondNumber)
 {
 	if (secondNumber == 0)
 	{
@@ -63,7 +63,7 @@ int divide(int firstNumber, int secondNumber)
 }
 
 /**
- * modulus - Returns the remainder of a divided by b
+ * mod - Returns the remainder of a divided by b
  * Return: The remainder of a divided by b
  * ------------------
  * @firstNumber: The numerator
@@ -71,7 +71,7 @@ int divide(int firstNumber, int secondNumber)
  * ------------------
  * By Youssef_Hassane
  */
-int modulus(int firstNumber, int secondNumber)
+int mod(int firstNumber, int secondNumber)
 {
 	if (secondNumber == 0)
 	{
