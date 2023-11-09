@@ -1,7 +1,7 @@
-#include <string.h>
-#include <stdio.h>
 #include "3-calc.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * get_op_func - Selects the appropriate
@@ -18,39 +18,33 @@
  * op_mod: returns the remainder of the division of a by
  * b. Prototype: int op_mod(int a, int b);
  * ----------------------
- * @operator: The operator provided as an argument to the program
+ * @s: The operator provided as an argument to the program
  * ----------------------
  * By Youssef_Hassane
  */
-
 int (*get_op_func(char *s))(int, int)
 {
-	/* Define an array of operation_t structures to map operators to functions */
+	/* */
 	op_t ops[] = {
 	    {"+", op_add},
 	    {"-", op_sub},
 	    {"*", op_mul},
 	    {"/", op_div},
-	    {"%", mod},
+	    {"%", op_mod},
 	    {NULL, NULL}};
-	int i = 0;
+	int i;
 
-	/* Loop through the operations array to find a matching operator */
-	while (ops[i].op)
+	i = 0;
+	/* */
+	while (i < 5)
 	{
-		/* Check if the provided operator matches the current element in the array */
+		/* */
 		if (strcmp(s, ops[i].op) == 0)
 		{
-			/* Return a pointer to the corresponding function if a match is found */
-			return (ops[i].f);
+			return (*(ops[i]).f);
 		}
-
-		/* Move to the next element in the array */
+		/* */
 		i++;
 	}
-
-	/* If no matching operator is found, */
-	/* print an error message and exit the program */
-	printf("Error\n");
-	exit(99);
+	return (NULL);
 }

@@ -63,7 +63,7 @@ int op_div(int a, int b)
 }
 
 /**
- * mod - Returns the remainder of a divided by b
+ * op_mod - Returns the remainder of a divided by b
  * Return: The remainder of a divided by b
  * ------------------
  * @a: The numerator
@@ -71,7 +71,7 @@ int op_div(int a, int b)
  * ------------------
  * By Youssef_Hassane
  */
-int mod(int a, int b)
+int op_mod(int a, int b)
 {
 	if (b == 0)
 	{
