@@ -18,14 +18,14 @@
  * op_mod: returns the remainder of the division of a by
  * b. Prototype: int op_mod(int a, int b);
  * ----------------------
- * @s: The operator provided as an argument to the program
+ * @providedOperator: The operator provided as an argument to the program
  * ----------------------
  * By Youssef_Hassane
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *providedOperator))(int, int)
 {
 	/* */
-	op_t ops[] = {
+	op_t operators[] = {
 	    {"+", op_add},
 	    {"-", op_sub},
 	    {"*", op_mul},
@@ -39,9 +39,9 @@ int (*get_op_func(char *s))(int, int)
 	while (i < 5)
 	{
 		/* */
-		if (strcmp(s, ops[i].operatorSign) == 0)
+		if (strcmp(providedOperator, operators[i].operatorSign) == 0)
 		{
-			return (*(ops[i]).functionPointer);
+			return (*(operators[i]).functionPointer);
 		}
 		/* */
 		i++;
