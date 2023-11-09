@@ -24,7 +24,8 @@
  */
 int (*get_op_func(char *providedOperator))(int, int)
 {
-	/* */
+	/* Define an array of structures containing operator */
+	/* strings and their corresponding functions */
 	op_t operators[] = {
 	    {"+", op_add},
 	    {"-", op_sub},
@@ -33,17 +34,17 @@ int (*get_op_func(char *providedOperator))(int, int)
 	    {"%", op_mod},
 	    {NULL, NULL}};
 	int index;
-
+	/* Loop through the array of operators and functions */
 	index = 0;
-	/* */
 	while (index < 5)
 	{
-		/* */
+		/* Check if the input string matches an operator in the array */
 		if (strcmp(providedOperator, operators[index].operatorSign) == 0)
 		{
+			/* If a match is found, return a pointer to the corresponding function */
 			return (*(operators[index]).functionPointer);
 		}
-		/* */
+		/* Move to the next element in the array */
 		index++;
 	}
 	return (NULL);
