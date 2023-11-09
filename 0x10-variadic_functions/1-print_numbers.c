@@ -36,13 +36,18 @@ void print_numbers(const char *separator,
 	/* Iterate through the arguments */
 	for (index = 0; index < theGivenNumbers; index++)
 	{
+		/* Get the next argument */
 		theGivenNumber = va_arg(args, int);
+		/* Check if it's the last argument */
+		/* Print the given number without the separator */
 		if (index == theGivenNumbers - 1)
 		{
 			printf("%i", theGivenNumber);
 			continue;
 		}
+		/* Print the given number */
 		printf("%i", theGivenNumber);
+		/* Print the separator */
 		printf("%s", theSeparator ? theSeparator : "");
 	}
 	printf("\n");
