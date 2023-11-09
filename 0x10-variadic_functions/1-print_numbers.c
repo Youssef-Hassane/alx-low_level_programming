@@ -3,8 +3,8 @@
 #include "variadic_functions.h"
 
 /**
- * print_numbers - Write a function that prints numbers, followed by a new line.
- * Return:
+ * print_numbers - Write a function that prints
+ * numbers, followed by a new line.
  * --------------------------
  * where separator is the string to be printed between numbers
  * and n is the number of integers passed to the function
