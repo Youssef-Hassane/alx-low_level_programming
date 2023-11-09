@@ -32,19 +32,19 @@ int (*get_op_func(char *providedOperator))(int, int)
 	    {"/", op_div},
 	    {"%", op_mod},
 	    {NULL, NULL}};
-	int i;
+	int index;
 
-	i = 0;
+	index = 0;
 	/* */
-	while (i < 5)
+	while (index < 5)
 	{
 		/* */
-		if (strcmp(providedOperator, operators[i].operatorSign) == 0)
+		if (strcmp(providedOperator, operators[index].operatorSign) == 0)
 		{
-			return (*(operators[i]).functionPointer);
+			return (*(operators[index]).functionPointer);
 		}
 		/* */
-		i++;
+		index++;
 	}
 	return (NULL);
 }
