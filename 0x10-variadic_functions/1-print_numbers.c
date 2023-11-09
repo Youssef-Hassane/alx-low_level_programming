@@ -43,7 +43,7 @@ void print_numbers(const char *separator,
 			continue;
 		}
 		printf("%i", theGivenNumber);
-		printf("%s", theSeparator);
+		printf("%s", *theSeparator ? theSeparator : "");
 	}
 	printf("\n");
 	/* Closing the variable args */
