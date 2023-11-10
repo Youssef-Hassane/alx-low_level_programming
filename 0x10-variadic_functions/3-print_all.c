@@ -44,9 +44,9 @@ void print_all(const char *const format, ...)
 	while (format != NULL && format[index1] != '\0')
 	{
 		index2 = 0;
-		while (types[index2].type != '\0')
+		while (types[index2].theOperatorSign != '\0')
 		{
-			if (format[index1] == types[index2].type)
+			if (format[index1] == types[index2].theOperatorSign)
 			{
 				printf("%s", separator1);
 				types[index2].function(args);

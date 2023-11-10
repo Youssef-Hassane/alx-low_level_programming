@@ -1,5 +1,6 @@
 #ifndef VARIADIC_FUCTIONS_H
 #define VARIADIC_FUCTIONS_H
+#include <stdarg.h>
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator,
@@ -17,6 +18,11 @@ typedef struct types
 {
 	char theOperatorSign;
 	void (*function)(va_list);
-} types_t;
+} print_type;
+void print_integer(va_list args);
+void print_character(va_list args);
+void print_string(va_list args);
+void print_floating_point(va_list args);
+
 
 #endif
