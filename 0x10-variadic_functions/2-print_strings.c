@@ -45,11 +45,11 @@ void print_strings(const char *separator,
 		/* Print the given string without the separator */
 		if (index == theGivenStrings - 1)
 		{
-			printf("%s", theGivenString);
+			printf("%s", *theGivenString ? theGivenString : "(nil)");
 			continue;
 		}
 		/* Print the given string */
-		printf("%s", theGivenString);
+		printf("%s", *theGivenString ? theGivenString : "(nil)");
 		/* Print the separator */
 		printf("%s", theSeparator ? theSeparator : "");
 	}
