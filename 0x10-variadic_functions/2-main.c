@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	print_strings(", ", 2, "Jay", "");
+	print_strings(", ", 5, "Jay", "");
 	return (0);
 }
