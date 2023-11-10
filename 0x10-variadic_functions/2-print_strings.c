@@ -43,21 +43,17 @@ void print_strings(const char *separator,
 		theGivenString = va_arg(args, char *);
 		/* Check if it's the last argument */
 		/* Print the given string without the separator */
+
 		/* Check if theGivenString is NULL, print "(nil)" */
+
 		if (index == theGivenStrings - 1)
 		{
-			/* Check if theGivenString is NULL, print "(nil)" */
-			if (theGivenString == NULL)
-				printf("(nil)");
-			else
-				printf("%s", theGivenString);
+			printf("%s", theGivenString ? theGivenString : "(nil)");
 			continue;
 		}
-		/* Check if theGivenString is NULL, print "(nil)" */
-		if (theGivenString == NULL)
-			printf("(nil)");
-		else
-			printf("%s", theGivenString);
+
+		/* Print the given string */
+		printf("%s", theGivenString ? theGivenString : "(nil)");
 		/* Print the separator */
 		printf("%s", theSeparator ? theSeparator : "");
 	}
