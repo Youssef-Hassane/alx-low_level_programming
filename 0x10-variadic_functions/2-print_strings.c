@@ -51,7 +51,7 @@ void print_strings(const char *separator,
 		/* Print the given string */
 		printf("%s", theGivenString);
 		/* Print the separator */
-		printf("%s", theSeparator ? theSeparator : "(nil)");
+		printf("%s", theSeparator ? theSeparator : "");
 	}
 	printf("\n");
 	/* Closing the variable args */
