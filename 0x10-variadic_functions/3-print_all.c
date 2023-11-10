@@ -3,7 +3,7 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - Write a function that prints anything.
+ * print_all - Write a function that prints anything.
  * --------------------------
  * Prototype: void print_all(const char * const format, ...);
  * where format is a list of types of arguments passed to the function
@@ -21,8 +21,7 @@
  * You are allowed to use printf
  * Print a new line at the end of your function
  * --------------------------
- * @separator: the string to be printed between numbers
- * @theGivenStrings: the number of arguments
+ * @format: list of types of arguments passed to the function
  * --------------------------
  * By Youssef Hassane
  */
