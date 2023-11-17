@@ -16,7 +16,7 @@ size_t list_len(const list_t *pointerToTheHead)
 	size_t countTheNumberOfBodesInTheList = 0;
 
 	/* Iterate through the list */
-	while (pointerToTheHead != NULL)
+	while (pointerToTheHead != theNull)
 	{
 		/* Increment the count of nodes in the list */
 		countTheNumberOfBodesInTheList++;

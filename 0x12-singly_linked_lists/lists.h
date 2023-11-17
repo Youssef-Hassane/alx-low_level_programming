@@ -27,4 +27,6 @@ size_t print_list(const list_t *pointerToTheHead);
 
 size_t list_len(const list_t *pointerToTheHead);
 
+list_t *add_node(list_t **pointerToThePointerOfTheHead, const char *string);
+
 #endif
