@@ -22,10 +22,10 @@ size_t print_list(const list_t *pointerToTheHead)
 	/* Initialize a variable to count the number of nodes in the list */
 	size_t countTheNumberOfBodesInTheList = 0;
 	/* Iterate through the list */
-	while (pointerToTheHead != NULL)
+	while (pointerToTheHead != theNull)
 	{
 		/* Check if the string in the current node is NULL */
-		if (pointerToTheHead->str == NULL)
+		if (pointerToTheHead->theString == theNull)
 		{
 			/* Print information for NULL strings */
 			printf("[0] (nil)\n");
@@ -33,10 +33,11 @@ size_t print_list(const list_t *pointerToTheHead)
 		else
 		{
 			/* Print information for non-NULL strings */
-			printf("[%d] %s\n", pointerToTheHead->len, pointerToTheHead->str);
+			printf("[%d] %s\n", pointerToTheHead->theLengthOfTheString,
+				 pointerToTheHead->theString);
 		}
 		/* Move to the next node in the list */
-		pointerToTheHead = pointerToTheHead->next;
+		pointerToTheHead = pointerToTheHead->pointsToTheNextNode;
 		/* Increment the count of nodes in the list */
 		countTheNumberOfBodesInTheList++;
 	}
