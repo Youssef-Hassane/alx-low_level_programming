@@ -1,3 +1,4 @@
+
 #ifndef LISTS_H
 #define LISTS_H
 
@@ -33,3 +34,4 @@ list_t *add_node_end(list_t **pointerToThePointerOfTheHead,
 			   const char *string);
 
 #endif
+
