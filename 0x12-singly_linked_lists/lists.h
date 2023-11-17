@@ -29,4 +29,7 @@ size_t list_len(const list_t *pointerToTheHead);
 
 list_t *add_node(list_t **pointerToThePointerOfTheHead, const char *string);
 
+list_t *add_node_end(list_t **pointerToThePointerOfTheHead,
+			   const char *string);
+
 #endif
