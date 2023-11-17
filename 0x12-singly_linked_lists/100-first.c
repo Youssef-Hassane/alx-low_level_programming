@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "lists.h"
 
 void Print_Before_The_Main_Function(void) __attribute__((constructor));
 
@@ -12,6 +11,6 @@ void Print_Before_The_Main_Function(void) __attribute__((constructor));
 
 void Print_Before_The_Main_Function(void)
 {
-	printf("You're beat! and yet, you must allow,
-	\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
