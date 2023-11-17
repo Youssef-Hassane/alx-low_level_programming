@@ -33,5 +33,7 @@ list_t *add_node(list_t **pointerToThePointerOfTheHead, const char *string);
 list_t *add_node_end(list_t **pointerToThePointerOfTheHead,
 			   const char *string);
 
+void free_list(list_t *theHead);
+
 #endif
 
