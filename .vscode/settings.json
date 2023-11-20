@@ -38,5 +38,8 @@
 		"stddef.h": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
-	"editor.defaultFormatter": "moufidayoub11.betty-extension"
+	"editor.defaultFormatter": "moufidayoub11.betty-extension",
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	}
 }
