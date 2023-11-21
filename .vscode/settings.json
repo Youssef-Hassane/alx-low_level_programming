@@ -35,7 +35,8 @@
 		"__verbose_abort": "c",
 		"cstdlib": "c",
 		"locale": "c",
-		"stddef.h": "c"
+		"stddef.h": "c",
+		"variant": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled",
 	"editor.defaultFormatter": "moufidayoub11.betty-extension",
