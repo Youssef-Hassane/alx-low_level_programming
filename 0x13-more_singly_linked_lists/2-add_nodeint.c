@@ -14,7 +14,7 @@
  * You are allowed to use printf
  * --------------------------
  * @head: The listint_t list to be printed
- * @n: The integer to be added
+ * @integerToBeAdded: The integer to be added
  * --------------------------
  * By Youssef Hassane
  */
