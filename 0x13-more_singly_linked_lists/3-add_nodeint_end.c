@@ -39,7 +39,7 @@ listint_t *add_nodeint_end(listint_t **head, const int integerToBeAdded)
 	/* Check if the list is not empty */
 	while (last->next)
 	{
-		/* Move to the next node */ 
+		/* Move to the next node */
 		last = last->next;
 	}
 	/* Set the next pointer of the last node to the new node */
