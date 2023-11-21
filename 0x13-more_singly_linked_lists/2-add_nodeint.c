@@ -19,33 +19,33 @@
  * By Youssef Hassane
  */
 
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head, const int integerToBeAdded)
 {
 	/* Initialize a new node */
-	listint_t *new;
+	listint_t *newNode;
 	/* Initialize a temporary node */
-	listint_t *temp;
+	listint_t *temporaryNode;
 	/* Allocate memory for the new node */
-	new = malloc(sizeof(listint_t));
+	newNode = malloc(sizeof(listint_t));
 	/* Check if malloc was successful */
-	if (new == NULL)
+	if (newNode == NULL)
 		return (NULL);
 	/* Set the value of the new node */
-	new->n = n;
+	newNode->n = integerToBeAdded;
 	/* Set the next pointer of the new node to NULL */
-	new->next = NULL;
+	newNode->next = NULL;
 	/* Check if the list is empty */
 	if (*head == NULL)
-		*head = new;
+		*head = newNode;
 	/* Check if the list is not empty */
 	else
 	{
 		/* Set the next pointer of the new node to the current head */
-		temp = *head;
+		temporaryNode = *head;
 		/* Set the next pointer of the current head to the new node */
-		*head = new;
+		*head = newNode;
 		/* Set the next pointer of the new node to the previous head */
-		new->next = temp;
+		newNode->next = temporaryNode;
 	}
 	/* Return the address of the new node */
 	return (*head);
