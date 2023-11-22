@@ -16,49 +16,48 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *fast = *h, *slow = *h, *tmp;
-	size_t nodes = 0;
+    size_t nodes = 0;
+    listint_t *fast_ptr, *slow_ptr, *free_ptr;
 
-	if (h == NULL || *h == NULL)
-		return (0);
-	while (slow && fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
-		/* If there is a loop */
-		if (fast == slow)
-		{
-			fast = *h;
-			while (1)
-			{
-				tmp = slow;
-				while (fast != slow && fast != tmp->next)
-					fast = fast->next;
-				if (fast == tmp)
-					break;
-				slow = slow->next;
-			}
-			break;
-		}
-	}
-	fast = *h;
-	while (fast != slow)
-	{
-		tmp = fast->next;
-		free(fast);
-		nodes++;
-		fast = tmp;
-	}
-	/* Free intersection node and nodes inside loop */
-	while (fast)
-	{
-		tmp = fast->next;
-		free(fast);
-		nodes++;
-		if (fast == tmp)
-			break;
-		fast = tmp;
-	}
-	*h = NULL;
-	return (nodes);
+    if (!h !*h) /* if no list or list is empty, return 0 */
+        return (nodes);
+
+    fast_ptr = *h;
+    slow_ptr = *h;
+
+    while (slow_ptr && fast_ptr && fast_ptr->next)
+    {
+        slow_ptr = slow_ptr->next;
+        fast_ptr = fast_ptr->next->next;
+
+        /* If loop exists, then remove it. */
+        if (slow_ptr == fast_ptr)
+        {
+            slow_ptr = *h;
+            while (1)
+            {
+                fast_ptr = fast_ptr->next;
+                if (fast_ptr == slow_ptr fast_ptr == slow_ptr->next)
+                    break;
+                slow_ptr = slow_ptr->next;
+            }
+
+            /* slow_ptr now holds the last node of the list, so make it's next NULL */
+            slow_ptr->next = NULL;
+        }
+    }
+
+    /* Now, we can free up the list as usual because there is no loop now */
+    slow_ptr = *h;
+    while (slow_ptr)
+    {
+        free_ptr = slow_ptr;
+        slow_ptr = slow_ptr->next;
+        free(free_ptr);
+        nodes++;
+    }
+
+    *h = NULL;
+
+    return (nodes);
 }
