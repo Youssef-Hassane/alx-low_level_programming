@@ -19,7 +19,7 @@ size_t free_listint_safe(listint_t **h)
     size_t nodes = 0;
     listint_t *fast_ptr, *slow_ptr, *free_ptr;
 
-    if (!h !*h) /* if no list or list is empty, return 0 */
+    if (!h || !*h) /* if no list or list is empty, return 0 */
         return (nodes);
 
     fast_ptr = *h;
