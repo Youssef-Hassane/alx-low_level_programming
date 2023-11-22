@@ -18,7 +18,7 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *fast = *h, *slow = *h, *tmp;
 	size_t nodes = 0;
-	
+
 	if (h == NULL || *h == NULL)
 		return (0);
 	while (slow && fast && fast->next)
