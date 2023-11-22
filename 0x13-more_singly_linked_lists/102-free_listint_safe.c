@@ -16,48 +16,33 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-    size_t nodes = 0;
-    listint_t *fast_ptr, *slow_ptr, *free_ptr;
+	listint_t *currentNode, *runnerNode, *headListNode;
+	size_t currentIdx, runnerIdx;
 
-    if (!h || !*h) /* if no list or list is empty, return 0 */
-        return (nodes);
+	if (headNode == NULL * headNode == NULL)
+		return (0);
 
-    fast_ptr = *h;
-    slow_ptr = *h;
+	currentNode = *headNode;
+	headListNode = *headNode;
+	currentIdx = 0;
 
-    while (slow_ptr && fast_ptr && fast_ptr->next)
-    {
-        slow_ptr = slow_ptr->next;
-        fast_ptr = fast_ptr->next->next;
-
-        /* If loop exists, then remove it. */
-        if (slow_ptr == fast_ptr)
-        {
-            slow_ptr = *h;
-            while (1)
-            {
-                fast_ptr = fast_ptr->next;
-                if (fast_ptr == slow_ptr fast_ptr == slow_ptr->next)
-                    break;
-                slow_ptr = slow_ptr->next;
-            }
-
-            /* slow_ptr now holds the last node of the list, so make it's next NULL */
-            slow_ptr->next = NULL;
-        }
-    }
-
-    /* Now, we can free up the list as usual because there is no loop now */
-    slow_ptr = *h;
-    while (slow_ptr)
-    {
-        free_ptr = slow_ptr;
-        slow_ptr = slow_ptr->next;
-        free(free_ptr);
-        nodes++;
-    }
-
-    *h = NULL;
-
-    return (nodes);
+	while (headListNode != NULL)
+	{
+		runnerNode = *headNode;
+		for (runnerIdx = 0; runnerIdx < currentIdx; runnerIdx++)
+		{
+			if (runnerNode == currentNode)
+			{
+				*headNode = NULL;
+				return (currentIdx);
+			}
+			runnerNode = runnerNode->next;
+		}
+		currentNode = headListNode->next;
+		free(headListNode);
+		headListNode = currentNode;
+		currentIdx++;
+	}
+	*headNode = NULL;
+	return (currentIdx);
 }
