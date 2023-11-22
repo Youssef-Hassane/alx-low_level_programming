@@ -19,21 +19,21 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *currentNode, *runnerNode, *headListNode;
 	size_t currentIdx, runnerIdx;
 
-	if (headNode == NULL * headNode == NULL)
+	if (h == NULL || *h == NULL)
 		return (0);
 
-	currentNode = *headNode;
-	headListNode = *headNode;
+	currentNode = *h;
+	headListNode = *h;
 	currentIdx = 0;
 
 	while (headListNode != NULL)
 	{
-		runnerNode = *headNode;
+		runnerNode = *h;
 		for (runnerIdx = 0; runnerIdx < currentIdx; runnerIdx++)
 		{
 			if (runnerNode == currentNode)
 			{
-				*headNode = NULL;
+				*h = NULL;
 				return (currentIdx);
 			}
 			runnerNode = runnerNode->next;
@@ -43,6 +43,6 @@ size_t free_listint_safe(listint_t **h)
 		headListNode = currentNode;
 		currentIdx++;
 	}
-	*headNode = NULL;
+	*h = NULL;
 	return (currentIdx);
 }
