@@ -21,7 +21,7 @@ size_t free_listint_safe(listint_t **headNode)
 	int addressDifference;
 	listint_t *currentNode;
 
-	if (!headNode !*headNode)
+	if (!headNode || !*headNode)
 		return (0);
 
 	while (*headNode)
