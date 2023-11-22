@@ -5,7 +5,8 @@
 
 /**
  * print_listint_safe - prints a listint_t linked list including loops
- * Return: The number of nodes in the list, exit program with status 98 on failure
+ * Return: The number of nodes in the list
+ * exit program with status 98 on failure
  * --------------------------
  * Prototype: print_listint_safe(const listint_t *head);
  * --------------------------
@@ -18,52 +19,40 @@ size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *slow, *fast, *marker;
 	size_t nodes = 0;
-	/* exit if head is NULL */
-	if (!head)
+
+	if (head == NULL)
 		exit(98);
-	/* initialize slow & fast pointers */
+
 	slow = head;
-	fast = head;
-	/* Traverse through the list till a loop is detected */
-	while (slow && fast && fast->next)
+	fast = head->next;
+
+	while (fast != NULL && fast->next != NULL && slow != fast)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
-		/* If loop is detected */
-		if (slow == fast)
+	}
+
+	if (slow == fast)
+	{
+		marker = head;
+		do
 		{
-			marker = slow;
-			break;
-		}
+			printf("[%p] %d\n", (void *)marker, marker->n);
+			nodes++;
+			marker = marker->next;
+		} while (marker != slow);
+		printf("-> [%p] %d\n", (void *)slow, slow->n);
 	}
-	/* Print list until loop marker is encountered */
-	while (head && (head != marker))
+	else
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		nodes++;
-		head = head->next;
-	}
-	/* If loop exists, print it */
-	if (marker)
-	{
-		printf("[%p] %d\n", (void *)marker, marker->n);
-		nodes++;
-		marker = marker->next;
-		while (marker != slow)
+		marker = head;
+		while (marker != NULL)
 		{
 			printf("[%p] %d\n", (void *)marker, marker->n);
 			nodes++;
 			marker = marker->next;
 		}
-		printf("-> [%p] %d\n", (void *)marker, marker->n);
 	}
-	/* If head is not NULL, list is not yet fully parsed */
-	while (head)
-	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		nodes++;
-		head = head->next;
-	}
-	/* returning the count of nodes */
+
 	return (nodes);
 }
