@@ -18,15 +18,13 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *fast = *h, *slow = *h, *tmp;
 	size_t nodes = 0;
-
+	
 	if (h == NULL || *h == NULL)
 		return (0);
-
 	while (slow && fast && fast->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
-
 		/* If there is a loop */
 		if (fast == slow)
 		{
@@ -43,7 +41,6 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	}
-
 	fast = *h;
 	while (fast != slow)
 	{
@@ -52,7 +49,6 @@ size_t free_listint_safe(listint_t **h)
 		nodes++;
 		fast = tmp;
 	}
-
 	/* Free intersection node and nodes inside loop */
 	while (fast)
 	{
@@ -63,7 +59,6 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		fast = tmp;
 	}
-
 	*h = NULL;
 	return (nodes);
 }
