@@ -9,40 +9,41 @@
  * --------------------------
  * Prototype: size_t free_listint_safe(listint_t **h);
  * --------------------------
- * @h: Double pointer to the head of the list
+ * @headNode: Double pointer to the head of the list
  * --------------------------
  * By Youssef Hassane
  */
 
-size_t free_listint_safe(listint_t **h)
-{
-	size_t new_node = 0;
-	int address;
-	listint_t *current_node;
 
-	if (!h || !*h)
+size_t free_listint_safe(listint_t **headNode)
+{
+	size_t freedNodeCount = 0;
+	int addressDifference;
+	listint_t *currentNode;
+
+	if (!headNode !*headNode)
 		return (0);
 
-	while (*h)
+	while (*headNode)
 	{
-		address = *h - (*h)->next;
+		addressDifference = *headNode - (*headNode)->next;
 
-		if (address > 0)
+		if (addressDifference > 0)
 		{
-			current_node = (*h)->next;
-			free(*h);
-			*h = current_node;
-			new_node++;
+			currentNode = (*headNode)->next;
+			free(*headNode);
+			*headNode = currentNode;
+			freedNodeCount++;
 		}
 		else
 		{
-			free(*h);
-			*h = NULL;
-			new_node++;
+			free(*headNode);
+			*headNode = NULL;
+			freedNodeCount++;
 			break;
 		}
 	}
 
-	*h = NULL;
-	return (new_node);
+	*headNode = NULL;
+	return (freedNodeCount);
 }
