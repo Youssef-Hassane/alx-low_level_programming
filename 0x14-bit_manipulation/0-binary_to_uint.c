@@ -6,7 +6,7 @@
  * Return: the converted number, or 0 if there is one or more chars
  * in the string b that is not 0 or 1, or if b is NULL
  * --------------------------
- * Prototype: size_t listint_len(const listint_t *h);
+ * Prototype: unsigned int binary_to_uint(const char *theGivenBinaryNumber);
  * --------------------------
  * @theGivenBinaryNumber: pointer to a string of 0 and 1 chars
  * --------------------------
