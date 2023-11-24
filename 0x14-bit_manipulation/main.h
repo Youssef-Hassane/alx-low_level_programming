@@ -9,5 +9,8 @@ void print_binary(unsigned long int theNumberToPrintInBinary);
 int get_bit(unsigned long int number, unsigned int index);
 int set_bit(unsigned long int *number, unsigned int index);
 int clear_bit(unsigned long int *number, unsigned int index);
-
+unsigned int flip_bits(
+	unsigned long int firstNumber,
+	unsigned long int secondNumber);
+	
 #endif
