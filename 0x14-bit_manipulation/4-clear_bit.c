@@ -18,7 +18,6 @@ int clear_bit(unsigned long int *number, unsigned int index)
 	if (index >= sizeof(unsigned long int) * 8)
 	{
 		/* Return -1 if the index is out of bounds */
-		
 		return (-1);
 	}
 	/* Clear the bit at the specified index (set it to 0) */
