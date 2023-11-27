@@ -34,7 +34,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fd == -1)
 		return 0;
-
+	if (buffer == NULL)
+		return (0);
 
 	while ((n = read(fd, buffer, sizeof(buffer))) > 0 && total < (ssize_t)letters)
 	{
