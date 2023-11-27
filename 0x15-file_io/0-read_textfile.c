@@ -48,7 +48,7 @@ int check_and_cleanup(const char *filename, int theFile, char *theBuffer)
  * By Youssef Hassane
  */
 ssize_t read_and_write(
-    int theFile, char *theBuffer, size_t letters, ssize_t *total)
+	int theFile, char *theBuffer, size_t letters, ssize_t *total)
 {
 	ssize_t theNumberOfBytesRead;
 	/* Read from the file descriptor and write to STDOUT */
