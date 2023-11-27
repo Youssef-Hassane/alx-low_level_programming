@@ -5,6 +5,32 @@
 #include <fcntl.h>
 
 /**
+ * check_and_cleanup - Checks the validity of filename,
+ * file descriptor, and buffer.
+ * Closes the file descriptor and frees the buffer if any of them is invalid.
+ * Return: 1 if everything is valid, 0 otherwise.
+ * --------------------------
+ * @filename: pointer to a string of 0 and 1 chars
+ * @fd: file descriptor
+ * @buffer: pointer to a buffer
+ * --------------------------
+ * By Youssef Hassane
+ */
+
+int check_and_cleanup(const char *filename, int fd, char *buffer)
+{
+	if (filename == NULL || fd == -1 || buffer == NULL)
+	{
+		if (fd != -1)
+			close(fd);
+		free(buffer);
+		return (0);
+	}
+
+	return (1);
+}
+
+/**
  * read_textfile - Write a function that reads a text
  * file and prints it to the POSIX standard output
  * Return: the actual number of letters it could read and print
@@ -19,28 +45,19 @@
  * --------------------------
  * By Youssef Hassane
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd = open(filename, O_RDONLY);
+
 	char *buffer = malloc(letters + 1);
+
 	ssize_t total = 0, n;
 
-	if (filename == NULL)
+	if (!check_and_cleanup(filename, fd, buffer))
 		return (0);
 
-	if (fd == -1)
-		return (0);
-
-	if (buffer == NULL)
-	{
-		close(fd);
-		return (0);
-	}
-
-	while ((n = read(fd, buffer, letters - total)) >
-		     0 &&
-		 total < (ssize_t)letters)
+	while ((n = read(fd, buffer, letters - total))
+	> 0 && total < (ssize_t)letters)
 	{
 		if (write(STDOUT_FILENO, buffer, n) != n)
 		{
