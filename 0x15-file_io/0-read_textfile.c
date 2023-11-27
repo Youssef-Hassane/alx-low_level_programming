@@ -48,22 +48,23 @@ int check_and_cleanup(const char *filename, int theFile, char *theBuffer)
  * By Youssef Hassane
  */
 ssize_t read_and_write(
-	int theFile, char *theBuffer, size_t letters, ssize_t *total)
+    int theFile, char *theBuffer, size_t letters, ssize_t *total)
 {
-	ssize_t n;
+	ssize_t theNumberOfBytesRead;
 	/* Read from the file descriptor and write to STDOUT */
-	while ((n = read(theFile, theBuffer, letters - *total)) > 0
-		&& *total < (ssize_t)letters)
+	while ((theNumberOfBytesRead = read(theFile, theBuffer, letters - *total)) > 0
+			&& *total < (ssize_t)letters)
 	{
 		/* If write fails, free buffer, close theFile, and return 0 */
-		if (write(STDOUT_FILENO, theBuffer, n) != n)
+		if (write(STDOUT_FILENO, theBuffer, theNumberOfBytesRead)
+				!= theNumberOfBytesRead)
 		{
 			free(theBuffer);
 			close(theFile);
 			return (0);
 		}
 		/* Update the total bytes read and written */
-		*total += n;
+		*total += theNumberOfBytesRead;
 	}
 	/* Return the total number of bytes read and written */
 	return (*total);
