@@ -66,7 +66,6 @@ ssize_t read_and_write(int fd, char *buffer, size_t letters, ssize_t *total)
 * Return: the actual number of letters it could read and print
 * --------------------------
 * Prototype: ssize_t read_textfile(const char *filename, size_t letters);
-
 * if the file can not be opened or read, return 0
 * if filename is NULL return 0
 * if write fails or does not write the expected amount of bytes, return 0
