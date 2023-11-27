@@ -5,7 +5,8 @@
 #include <fcntl.h>
 
 /**
- * check_and_cleanup - Checks the validity of filename, file descriptor, and buffer.
+ * check_and_cleanup - Checks the validity of filename
+ * file descriptor, and buffer.
  * Closes the file descriptor and frees the buffer if any of them is invalid.
  * Returns 1 if everything is valid, 0 otherwise.
  * --------------------------
@@ -44,7 +45,8 @@ ssize_t read_and_write(int fd, char *buffer, size_t letters, ssize_t *total)
 {
 	ssize_t n;
 
-	while ((n = read(fd, buffer, letters - *total)) > 0 && *total < (ssize_t)letters)
+	while ((n = read(fd, buffer, letters - *total))
+			> 0 && *total < (ssize_t)letters)
 	{
 		if (write(STDOUT_FILENO, buffer, n) != n)
 		{
