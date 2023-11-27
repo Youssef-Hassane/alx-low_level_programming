@@ -24,9 +24,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	/* You can adjust the buffer size as needed */
 	char buffer[1024];
-	ssize_t total, n;
+	ssize_t total = 0, n;
 
 	if (filename == NULL)
 		return 0;
@@ -36,10 +35,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1)
 		return 0;
 
-	total = 0;
 
-	while ((n = read(fd, buffer, sizeof(buffer))) > 0 && (ssize_t)total < (ssize_t)letters)
+	while ((n = read(fd, buffer, sizeof(buffer))) > 0 && total < (ssize_t)letters)
 	{
+		if (total + n > (ssize_t)letters)
+		{
+			n = letters - total;
+		}
 		if (write(STDOUT_FILENO, buffer, n) != n)
 		{
 			close(fd);
