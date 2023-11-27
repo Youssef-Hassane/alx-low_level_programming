@@ -8,7 +8,7 @@
  * check_and_cleanup - Checks the validity of filename
  * file descriptor, and buffer.
  * Closes the file descriptor and frees the buffer if any of them is invalid.
- * Returns 1 if everything is valid, 0 otherwise.
+ * Return: 1 if everything is valid, 0 otherwise.
  * --------------------------
  * @filename: pointer to a string of 0 and 1 chars
  * @fd: file descriptor
@@ -32,7 +32,7 @@ int check_and_cleanup(const char *filename, int fd, char *buffer)
 /**
  * read_and_write - Reads from the file descriptor and writes to STDOUT.
  * Frees the buffer and closes the file descriptor in case of an error.
- * Returns the total number of bytes read and written.
+ * Return: the total number of bytes read and written.
  * --------------------------
  * @fd: file descriptor
  * @buffer: pointer to a buffer
