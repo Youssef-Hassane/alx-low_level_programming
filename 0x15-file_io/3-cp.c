@@ -4,8 +4,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-#define BUFFER_SIZE 1024
-
 /**
  * copy - copy files
  * @fd_from: first file discreptor
@@ -16,7 +14,7 @@
 void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 {
 	int printed, flag;
-	char *buff[BUFFER_SIZE];
+	char *buff[1024];
 
 	printed = read(fd_from, buff, 1024);
 	if (printed == -1)
@@ -61,7 +59,7 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fd_to = open(argv[2], O_WRONLY | O_TRUNC | O_APPEND);
+	fd_to = open(argv[2], O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (fd_to == -1)
 	{
 		fd_to = open(argv[2], O_WRONLY | O_CREAT, 0664);
