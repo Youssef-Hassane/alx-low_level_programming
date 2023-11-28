@@ -19,8 +19,9 @@ void error_exit(char *msg)
 */
 void print_magic(unsigned char *magic)
 {
+	int i = 0;
 	printf("  Magic:   ");
-	for (int i = 0; i < 16; ++i)
+	for (; i < 16; ++i)
 
 		printf("%02x%c", magic[i], i < 15 ? ' ' : '\n');
 }
