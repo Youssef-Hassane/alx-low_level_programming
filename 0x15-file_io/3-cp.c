@@ -14,7 +14,7 @@
 void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 {
 	int printed, flag;
-	char *buff[1024];
+	char buff[1024];
 
 	printed = read(fd_from, buff, 1024);
 	if (printed == -1)
@@ -67,12 +67,14 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
+
 	flag = close(fd_to);
 	if (flag == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d", fd_to);
 		exit(100);
 	}
+
 	flag = close(fd_from);
 	if (flag == -1)
 	{
