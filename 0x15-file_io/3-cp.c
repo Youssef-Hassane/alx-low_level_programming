@@ -1,91 +1,107 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <errno.h>
-
-#define BUFFER_SIZE 1024
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * print_error - Print error message and exit with a specific code.
+ * close_fd - Closes a file descriptor.
+ * Return: No return value.
  * --------------------------
- * @code: Exit code.
- * @message: Error message format string.
- * @file_name: Name of the file related to the error.
- * @fd_value: File descriptor related to the error.
+ * @fd: The file descriptor to be closed.
  * --------------------------
  * By Youssef Hassane
  */
-
-void print_error(int code, const char *message, const char *file_name, int fd_value)
+void close_fd(int fd)
 {
-	dprintf(STDERR_FILENO, message, file_name, fd_value);
-	exit(code);
+	int r = close(fd);
+
+	if (r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
 
 /**
- * main - Copy contents from one file to another.
- * Return: 0 on success, non-zero on failure.
+ * copy - Copies the content of one file to another.
+ * Return: No return value.
  * --------------------------
- * @argc: Number of command-line arguments.
- * @argv: Array of command-line argument strings.
+ * @fd_from: The file descriptor of the source file.
+ * @fd_to: The file descriptor of the destination file.
+ * @f_from: The name of the source file.
+ * @f_to: The name of the destination file.
  * --------------------------
  * By Youssef Hassane
  */
-
-int main(int argc, char *argv[])
+void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 {
-	const char *file_from, *file_to;
+	ssize_t printed, flag;
+	char buffer[1024];
+
+	printed = read(fd_from, buffer, 1024);
+
+	if (printed == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
+		exit(98);
+	}
+
+	while (printed > 0)
+	{
+		flag = write(fd_to, buffer, printed);
+		if (flag != printed)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_to);
+			exit(99);
+		}
+
+		printed = read(fd_from, buffer, 1024);
+		if (printed == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
+			exit(98);
+		}
+	}
+}
+
+/**
+ * main - Entry point of the program.
+ * Return: 0 on success, or an error code on failure.
+ * --------------------------
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the command-line arguments.
+ * --------------------------
+ * By Youssef Hassane
+ */
+int main(int argc, char **argv)
+{
 	int fd_from, fd_to;
-	char buffer[BUFFER_SIZE];
-	ssize_t bytes_read, bytes_written;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	file_from = argv[1];
-	file_to = argv[2];
-
-	fd_from = open(file_from, O_RDONLY);
+	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
-		print_error(98, "Error: Can't read from file %s\n", file_from, fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		print_error(99, "Error: Can't write to file %s\n", file_to, fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		close_fd(fd_from);
+		exit(99);
 	}
 
-	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
-	{
-		bytes_written = write(fd_to, buffer, bytes_read);
-		if (bytes_written != bytes_read)
-		{
-			print_error(99, "Error: Can't write to file %s\n", file_to, fd_to);
-		}
-	}
+	copy(fd_from, fd_to, argv[1], argv[2]);
 
-	if (bytes_read == -1)
-	{
-		print_error(98, "Error: Can't read from file %s\n", file_from, fd_from);
-	}
+	close_fd(fd_from);
+	close_fd(fd_to);
 
-	if (close(fd_from) == -1)
-	{
-		print_error(100, "Error: Can't close fd %d\n", file_from, fd_from);
-	}
-
-	if (close(fd_to) == -1)
-	{
-		print_error(100, "Error: Can't close fd %d\n", file_to, fd_to);
-	}
-
-	return 0;
+	return (0);
 }
