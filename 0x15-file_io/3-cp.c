@@ -62,11 +62,9 @@ int main(int argc, char **argv)
 	fd_to = open(argv[2], O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (fd_to == -1)
 	{
-		if (fd_to == -1)
-		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
+
+		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
 	flag = close(fd_to);
