@@ -46,7 +46,7 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
  */
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, flag = 0;
+	int fd_from, fd_to, flag;
 
 	if (argc != 3)
 	{
@@ -76,7 +76,6 @@ int main(int argc, char **argv)
 		dprintf(2, "Error: Can't close fd %d", fd_to);
 		exit(100);
 	}
-	flag = 0;
 	flag = close(fd_from);
 	if (flag == -1)
 	{
