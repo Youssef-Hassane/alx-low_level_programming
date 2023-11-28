@@ -3,6 +3,9 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+#define BUFFER_SIZE 1024
+
 /**
  * copy - copy files
  * @fd_from: first file discreptor
@@ -13,7 +16,7 @@
 void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 {
 	int printed, flag;
-	char *buff[1024];
+	char *buff[BUFFER_SIZE];
 
 	printed = read(fd_from, buff, 1024);
 	if (printed == -1)
