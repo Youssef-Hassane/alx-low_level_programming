@@ -4,104 +4,127 @@
 #include <stdio.h>
 
 /**
- * close_fd - Closes a file descriptor.
- * Return: No return value.
- * --------------------------
- * @fd: The file descriptor to be closed.
- * --------------------------
- * By Youssef Hassane
- */
-void close_fd(int fd)
+* closeFileDescriptor - Closes a file descriptor.
+* Return: No return value.
+* --------------------------
+* @fileDescriptor: The file descriptor to be closed.
+* --------------------------
+* By Alex Johnson
+*/
+void closeFileDescriptor(int fileDescriptor)
 {
-	int r = close(fd);
+	int result = close(fileDescriptor);
 
-	if (r == -1)
+	if (result == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileDescriptor);
 		exit(100);
 	}
 }
 
 /**
- * copy - Copies the content of one file to another.
- * Return: No return value.
- * --------------------------
- * @fd_from: The file descriptor of the source file.
- * @fd_to: The file descriptor of the destination file.
- * @f_from: The name of the source file.
- * @f_to: The name of the destination file.
- * --------------------------
- * By Youssef Hassane
- */
-void copy(int fd_from, int fd_to, char *f_from, char *f_to)
+* fileCopy - Copies the content of one file to another.
+* Return: No return value.
+* --------------------------
+* @srcFileDescriptor: The file descriptor of the source file.
+* @destFileDescriptor: The file descriptor of the destination file.
+* @sourceFileName: The name of the source file.
+* @destinationFileName: The name of the destination file.
+* --------------------------
+* By Alex Johnson
+*/
+void fileCopy(
+	int srcFileDescriptor,
+	int destFileDescriptor,
+	char *sourceFileName,
+	char *destinationFileName)
 {
-	ssize_t printed, flag;
+	ssize_t bytesRead, writeFlag;
 	char buffer[1024];
 
-	printed = read(fd_from, buffer, 1024);
+	bytesRead = read(srcFileDescriptor, buffer, 1024);
 
-	if (printed == -1)
+	if (bytesRead == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFileName);
 		exit(98);
 	}
 
-	while (printed > 0)
+	while (bytesRead > 0)
 	{
-		flag = write(fd_to, buffer, printed);
-		if (flag != printed)
+		writeFlag = write(destFileDescriptor, buffer, bytesRead);
+		if (writeFlag != bytesRead)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", f_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destinationFileName);
 			exit(99);
 		}
 
-		printed = read(fd_from, buffer, 1024);
-		if (printed == -1)
+		bytesRead = read(srcFileDescriptor, buffer, 1024);
+		if (bytesRead == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", f_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", sourceFileName);
 			exit(98);
 		}
 	}
 }
 
 /**
- * main - Entry point of the program.
- * Return: 0 on success, or an error code on failure.
- * --------------------------
- * @argc: The number of command-line arguments.
- * @argv: An array of strings containing the command-line arguments.
- * --------------------------
- * By Youssef Hassane
- */
-int main(int argc, char **argv)
+* entryPoint - Entry point of the program.
+* Return: 0 on success, or an error code on failure.
+* --------------------------
+* @argumentCount: The number of command-line arguments.
+* @argumentVector: An array of strings containing the command-line arguments.
+* --------------------------
+* By Youssef Hassane
+*/
+int entryPoint(int argumentCount, char **argumentVector)
 {
-	int fd_from, fd_to;
+	int sourceFileDescriptor, destinationFileDescriptor;
 
-	if (argc != 3)
+	if (argumentCount != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from == -1)
+	sourceFileDescriptor = open(argumentVector[1], O_RDONLY);
+	if (sourceFileDescriptor == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(
+			STDERR_FILENO, "Error: Can't read from file %s\n", argumentVector[1]);
 		exit(98);
 	}
 
-	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	if (fd_to == -1)
+	destinationFileDescriptor =
+	open(argumentVector[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	if (destinationFileDescriptor == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close_fd(fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argumentVector[2]);
+		closeFileDescriptor(sourceFileDescriptor);
 		exit(99);
 	}
 
-	copy(fd_from, fd_to, argv[1], argv[2]);
+	fileCopy(sourceFileDescriptor,
+	destinationFileDescriptor,
+	argumentVector[1],
+	argumentVector[2]);
 
-	close_fd(fd_from);
-	close_fd(fd_to);
+	closeFileDescriptor(sourceFileDescriptor);
+	closeFileDescriptor(destinationFileDescriptor);
 
 	return (0);
+}
+
+/**
+* main - Entry point of the program
+* Return: 0 on success, or an error code on failure.
+* --------------------------
+* @argc: The number of command-line arguments.
+* @argv: An array of strings containing the command-line arguments.
+* --------------------------
+* By Youssef Hassane
+*/
+int main(int argc, char **argv)
+{
+	return (entryPoint(argc, argv));
 }

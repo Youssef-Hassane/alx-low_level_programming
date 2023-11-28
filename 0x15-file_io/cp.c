@@ -1,14 +1,15 @@
-#include "main.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-
 /**
- * close_fd - close a file descriptor
- * @fd: file descriptor
- * Return: nothing
+ * close_fd - Closes a file descriptor.
+ * Return: No return value.
+ * --------------------------
+ * @fd: The file descriptor to be closed.
+ * --------------------------
+ * By Youssef Hassane
  */
 void close_fd(int fd)
 {
@@ -22,11 +23,15 @@ void close_fd(int fd)
 }
 
 /**
- * copy - copy files
- * @fd_from: first file descriptor
- * @fd_to: second file descriptor
- * @f_from: first file name
- * @f_to: second file name
+ * copy - Copies the content of one file to another.
+ * Return: No return value.
+ * --------------------------
+ * @fd_from: The file descriptor of the source file.
+ * @fd_to: The file descriptor of the destination file.
+ * @f_from: The name of the source file.
+ * @f_to: The name of the destination file.
+ * --------------------------
+ * By Youssef Hassane
  */
 void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 {
@@ -60,10 +65,13 @@ void copy(int fd_from, int fd_to, char *f_from, char *f_to)
 }
 
 /**
- * main - copies from one file to another
- * @argc: num of arguments
- * @argv: value of arguments
- * Return: 0 on success
+ * main - Entry point of the program.
+ * Return: 0 on success, or an error code on failure.
+ * --------------------------
+ * @argc: The number of command-line arguments.
+ * @argv: An array of strings containing the command-line arguments.
+ * --------------------------
+ * By Youssef Hassane
  */
 int main(int argc, char **argv)
 {
