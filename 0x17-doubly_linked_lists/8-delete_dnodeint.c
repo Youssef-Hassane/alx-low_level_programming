@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 
-
 /**
  * delete_dnodeint_at_index - Deletes the node at index of
  *  a dlistint_t linked list
@@ -17,16 +16,13 @@
  * By Youssef Hassane
  */
 
-
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *current = *head; /* Pointer to traverse the list */
 	unsigned int i = 0;			 /* Index counter */
-
 	/* If the list is empty, return -1 indicating failure */
 	if (current == NULL)
 		return (-1);
-
 	/* If the node to delete is the head, update head and free the old head */
 	if (index == 0)
 	{
@@ -36,19 +32,16 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(current);			  /* Free the old head node */
 		return (1);				  /* Return 1 indicating success */
 	}
-
 	/* Traverse the list to find the node at specified index */
 	while (current != NULL && i < index)
 	{
 		current = current->next; /* Move to the next node */
 		i++;					 /* Increment index counter */
 	}
-
 	/* If the node is not found (index out of range) */
 	/* return -1 indicating failure */
 	if (current == NULL)
 		return (-1);
-
 	/* If the node to delete is not the last node */
 	/* update the next node's prev pointer */
 	if (current->next != NULL)
