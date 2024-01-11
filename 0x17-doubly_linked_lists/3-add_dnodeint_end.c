@@ -46,7 +46,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int integerToBeAdded)
 	/* Set the next pointer of the last node to the new node */
 	last->next = newNode;
 	/* Set the prev pointer of the new node to the last node */
-    newNode->prev = last;
+	newNode->prev = last;
 	/* Return the address of the new node */
 	return (newNode);
 }
