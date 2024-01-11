@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - Write a function that adds a new
+ * add_dnodeint_end - Write a function that adds a new
  * node at the end of a listint_t list.
  * Return: the address of the new element, or NULL if it failed
  * --------------------------
@@ -34,6 +34,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int integerToBeAdded)
 	if (*head == NULL)
 	{
 		*head = newNode;
+		newNode->prev = NULL;
 		return (newNode);
 	}
 	/* Check if the list is not empty */
@@ -44,6 +45,8 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int integerToBeAdded)
 	}
 	/* Set the next pointer of the last node to the new node */
 	last->next = newNode;
+	/* Set the prev pointer of the new node to the last node */
+    newNode->prev = last;
 	/* Return the address of the new node */
 	return (newNode);
 }
