@@ -33,7 +33,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int integerToBeAdded)
 	/* Set the value of the new node */
 	newNode->n = integerToBeAdded;
 	/* Set the next pointer of the new node to NULL */
-	newNode->next = NULL;
+	newNode->next = *head;
+	newNode->prev = NULL;
 	/* Check if the list is empty */
 	if (*head == NULL)
 		*head = newNode;
