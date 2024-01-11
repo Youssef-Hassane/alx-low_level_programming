@@ -16,13 +16,13 @@
  * By Youssef Hassane
  */
 
-dlistint_t *add_dnodeint_end(listint_t **head, const int integerToBeAdded)
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int integerToBeAdded)
 {
 	/* Initialize a new node */
-	listint_t *newNode;
-	listint_t *last = *head;
+	dlistint_t *newNode;
+	dlistint_t *last = *head;
 	/* Allocate memory for the new node */
-	newNode = malloc(sizeof(listint_t));
+	newNode = malloc(sizeof(dlistint_t));
 	/* Check if malloc was successful */
 	if (newNode == NULL)
 		return (NULL);
