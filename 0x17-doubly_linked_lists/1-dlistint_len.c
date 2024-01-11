@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * listint_len - Write a function that returns the
+ * dlistint_len - Write a function that returns the
  * number of elements in a linked listint_t list.
  * Return: the number of elements in a linked listint_t list
  * --------------------------
