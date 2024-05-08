@@ -9,8 +9,8 @@
  * Prototype: int jump_search(int *array, size_t size, int value);
  * --------------------------
  * @array: array of integers
- * @size: number of elements in array
- * @value: value to search for
+ * @count: number of elements in array
+ * @target: value to search for
  * --------------------------
  * Description:
  * Finds a value in a sorted array of integers using Jump search algorithm
@@ -18,50 +18,41 @@
  * By Youssef Hassane
  */
 
-int jump_search(int *array, size_t size, int value)
-{
-	size_t block_idx = 0, element_idx, jump_step;
 
-	/* handle edge cases */
-	if (array == NULL || size == 0)
+int jump_search(int *array, size_t count, int target)
+{
+	size_t jump_range = (size_t)sqrt(count);
+	size_t prev_index = 0;
+	size_t index;
+	/* check if array is NULL */
+	if (array == NULL)
 		return (-1);
 
-	/* calculate the jump step */
-	jump_step = (size_t)sqrt(size);
+	printf("Value checked array[%lu] = [%d]\n", prev_index, array[prev_index]);
+	/* iterate over array to find the start of the range */
+	/* where the target could be present */
 
-	/* search for block containing value */
-	while (block_idx < size && array[block_idx] <= value)
+	while (array[jump_range] < target && jump_range < count)
 	{
-		printf("Value checked array[%lu] = [%d]\n", block_idx, array[block_idx]);
-
-		if (array[block_idx] == value)
-			return (block_idx);
-
-		block_idx += jump_step;
-
-		/* check the last block */
-		if (block_idx >= size || array[block_idx] > value)
+		printf("Value checked array[%lu] = [%d]\n", jump_range, array[jump_range]);
+		prev_index = jump_range;
+		jump_range += (size_t)sqrt(count);
+		if (jump_range >= count)
 			break;
 	}
 
-	/* linear search in the block */
-	if (block_idx != 0)
+	printf("Value found between indexes [%lu] and [%lu]\n",
+	prev_index, jump_range);
+
+	/* iterate through the range to find the target */
+	index = prev_index;
+	while (index <= jump_range && index < count)
 	{
-		element_idx = block_idx - 1;
-
-		/* traverse the block */
-		while (element_idx >= 0 && array[element_idx] < value)
-		{
-			printf("Value checked array[%lu] = [%d]\n", element_idx, array[element_idx]);
-
-			element_idx--;
-		}
-
-		/* check the first element of the block */
-		if (array[element_idx + 1] == value)
-			return (element_idx + 1);
+		printf("Value checked array[%lu] = [%d]\n", index, array[index]);
+		if (array[index] == target)
+			return (index);
+		index++;
 	}
 
-	/* if value is not found */
 	return (-1);
 }
