@@ -18,7 +18,7 @@
  * By Youssef Hassane
  */
 
-int interpolation_search(int *arr, size_t count, int value_to_search)
+int interpolation_search(int *array, size_t count, int value_to_search)
 {
 	unsigned int left_index = 0;
 	unsigned int right_index = count - 1;
