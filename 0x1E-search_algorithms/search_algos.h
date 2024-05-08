@@ -5,6 +5,6 @@
 
 
 int linear_search(int *arr, size_t n, int target);
-
+int binary_search(int *arr, size_t size, int target);
 
 #endif
