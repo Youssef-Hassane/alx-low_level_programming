@@ -21,10 +21,10 @@ int binary_search(int *arr, size_t size, int target)
 {
 	size_t start = 0;
 	size_t end = size - 1;
-
+	size_t i;
 	/* Print the array */
 	printf("Searching in array: ");
-	for (size_t i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		printf("%d", arr[i]);
 		if (i != size - 1)
@@ -36,10 +36,10 @@ int binary_search(int *arr, size_t size, int target)
 	{
 		/* Calculate the index to search in */
 		size_t index = (start + end) / 2;
-
+		size_t i;
 		/* Print the subarray being searched */
 		printf("Searching in array: ");
-		for (size_t i = start; i <= end; i++)
+		for (i = start; i <= end; i++)
 		{
 			printf("%d", arr[i]);
 			if (i != end)
