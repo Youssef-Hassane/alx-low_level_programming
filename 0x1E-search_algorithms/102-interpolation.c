@@ -24,16 +24,16 @@ int interpolation_search(int *array, size_t count, int value_to_search)
 	unsigned int right_index = count - 1;
 	unsigned int index_to_check;
 
-	if (arr == NULL || count == 0)
+	if (array == NULL || count == 0)
 		return (-1);
 
-	while (arr[left_index] != arr[right_index])
+	while (array[left_index] != array[right_index])
 	{
 		/* calculate the position to check based on interpolation formula */
 		index_to_check = left_index +
 		(unsigned int)((double)(right_index - left_index) /
-		(arr[right_index] - arr[left_index]) *
-		(value_to_search - arr[left_index]));
+		(array[right_index] - array[left_index]) *
+		(value_to_search - array[left_index]));
 
 		/* check if the index is out of range */
 		if (index_to_check >= count)
@@ -45,18 +45,18 @@ int interpolation_search(int *array, size_t count, int value_to_search)
 
 		/* print the value checked at the index */
 		printf("Value checked array[%u] = [%d]\n", index_to_check,
-			arr[index_to_check]);
+			array[index_to_check]);
 
 		/* update the range based on the value checked */
-		if (value_to_search < arr[index_to_check])
+		if (value_to_search < array[index_to_check])
 			right_index = index_to_check - 1;
-		else if (value_to_search > arr[index_to_check])
+		else if (value_to_search > array[index_to_check])
 			left_index = index_to_check + 1;
 		else
 			return (index_to_check);
 	}
 
-	if (value_to_search == arr[left_index])
+	if (value_to_search == array[left_index])
 		return (left_index);
 	else
 		return (-1);
