@@ -11,15 +11,12 @@
  * @arrSize: size of the array
  * @target: value to search for
  * --------------------------
- * Description:
- * Finds a value in a sorted array of
- * integers using Exponential search algorithm
- * --------------------------
  * By Youssef Hassane
- */
+*/
+
 int exponential_search(int *arr, size_t arrSize, int target)
 {
-	size_t bound;
+	unsigned int bound;
 
 	if (arr == NULL || arrSize == 0)
 		return (-1);
@@ -27,13 +24,13 @@ int exponential_search(int *arr, size_t arrSize, int target)
 	bound = 1;
 	while (bound < arrSize && arr[bound] < target)
 	{
-		printf("Value checked array[%zu] = [%d]\n", bound, arr[bound]);
+		printf("Value checked arr[%d] = [%d]\n", bound, arr[bound]);
 		bound *= 2;
 	}
-	printf("Value found between indexes [%zu] and [%zu]\n",
-		 (bound / 2), (bound >= arrSize ? arrSize - 1 : bound));
+	printf("Value found between indices [%d] and [%d]\n",
+	       (bound / 2), findMin(bound, arrSize - 1));
 	return (binarySearchHelper(arr, target, (bound / 2 - 1),
-	(bound >= arrSize ? arrSize : bound + 1)));
+	findMin(bound + 1, arrSize)));
 }
 
 /**
@@ -45,16 +42,11 @@ int exponential_search(int *arr, size_t arrSize, int target)
  * --------------------------
  * @arr: array of integers
  * @key: value to search for
- * @lower: lower bound
- * @higher: higher bound
- * --------------------------
- * Description:
- * Finds a value in a sorted array of
- * integers using Binary search algorithm
+ * @lower: lowest index
+ * @higher: highest index
  * --------------------------
  * By Youssef Hassane
  */
-
 int binarySearchHelper(int *arr, int key, int lower, int higher)
 {
 	int i;
@@ -80,4 +72,21 @@ int binarySearchHelper(int *arr, int key, int lower, int higher)
 		return (binarySearchHelper(arr, key, lower, mid));
 	else
 		return (binarySearchHelper(arr, key, mid, higher));
+}
+
+
+/**
+ * findMin - finds the minimum of two numbers
+ * Return: minimum
+ * --------------------------
+ * Prototype: int findMin(int a, int b);
+ * --------------------------
+ * @a: first number
+ * @b: second number
+ * --------------------------
+ * By Youssef Hassane
+ */
+int findMin(int a, int b)
+{
+	return (a < b ? a : b);
 }

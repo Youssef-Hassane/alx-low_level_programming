@@ -11,5 +11,6 @@ int interpolation_search(int *array, size_t size, int target);
 
 int exponential_search(int *arr, size_t arrSize, int target);
 int binarySearchHelper(int *arr, int key, int lower, int higher);
+int findMin(int a, int b);
 
 #endif
