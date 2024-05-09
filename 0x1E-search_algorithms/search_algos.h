@@ -9,6 +9,7 @@ int binary_search(int *arr, size_t size, int target);
 int jump_search(int *array, size_t size, int value);
 int interpolation_search(int *array, size_t size, int target);
 
-int exponential_search(int *arr, size_t arr_len, int value);
+int exponential_search(int *arr, size_t arrSize, int target);
+int binarySearch(int *arr, size_t arrSize, int target);
 
 #endif
