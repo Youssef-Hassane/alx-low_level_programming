@@ -1,65 +1,83 @@
 #include "search_algos.h"
 
 /**
- * exponential_search - conducts exponential search
- * @arr: the integer array
+ * exponential_search - searches for a value in a sorted array of integers
+ * using the Exponential search algorithm
+ * Return: -1 if not found, index if found
+ * --------------------------
+ * Prototype: int exponential_search(int *array, size_t size, int value);
+ * --------------------------
+ * @arr: array of integers
  * @arrSize: size of the array
- * @target: target value to search for
- *
- * Return: index if found, -1 otherwise
+ * @target: value to search for
+ * --------------------------
+ * Description:
+ * Finds a value in a sorted array of
+ * integers using Exponential search algorithm
+ * --------------------------
+ * By Youssef Hassane
  */
 int exponential_search(int *arr, size_t arrSize, int target)
 {
-	size_t index = 1, newSize = 0;
-	int result;
+	size_t bound;
 
-	if (!arr || !arrSize)
+	if (arr == NULL || arrSize == 0)
 		return (-1);
 
-	while (index < arrSize && arr[index] < target)
+	bound = 1;
+	while (bound < arrSize && arr[bound] < target)
 	{
-		printf("Value checked arr[%lu] = [%d]\n", index, arr[index]);
-		index <<= 1;
+		printf("Value checked array[%zu] = [%d]\n", bound, arr[bound]);
+		bound *= 2;
 	}
-	newSize = (index >= arrSize ? arrSize : index + 1) - (index >> 1);
-	index >>= 1;
-	printf("Value found between indices [%lu] and [%lu]\n",
-		 index, index << 1 >= arrSize ? arrSize - 1 : index << 1);
-	result = binarySearch(arr + index, newSize, target);
-	return (result == -1 ? result : result + (int)index);
+	printf("Value found between indexes [%zu] and [%zu]\n",
+		 (bound / 2), (bound >= arrSize ? arrSize - 1 : bound));
+	return (binarySearchHelper(arr, target, (bound / 2 - 1),
+	(bound >= arrSize ? arrSize : bound + 1)));
 }
 
 /**
- * binarySearch - conducts binary search
- * @arr: the integer array
- * @arrSize: size of the array
- * @target: target value to search for
- *
- * Return: index if found, -1 otherwise
+ * binarySearchHelper - searches for a value in a sorted array of integers
+ * using the Binary search algorithm
+ * Return: -1 if not found, index if found
+ * --------------------------
+ * Prototype: int binarySearchHelper(int *arr, int key, int lower, int higher);
+ * --------------------------
+ * @arr: array of integers
+ * @key: value to search for
+ * @lower: lower bound
+ * @higher: higher bound
+ * --------------------------
+ * Description:
+ * Finds a value in a sorted array of
+ * integers using Binary search algorithm
+ * --------------------------
+ * By Youssef Hassane
  */
-int binarySearch(int *arr, size_t arrSize, int target)
-{
-	size_t index = 0;
-	int *a = arr;
 
-	if (!arr)
+int binarySearchHelper(int *arr, int key, int lower, int higher)
+{
+	int i;
+	int mid;
+
+	if (lower + 1 == higher)
 		return (-1);
 
-	while (arrSize)
+	printf("Searching in array: ");
+	for (i = lower + 1; i < higher; i++)
 	{
-		for (index = 0, printf("Searching in array: "); index < arrSize; index++)
-			printf("%d%s", a[index], index + 1 == arrSize ? "\n" : ", ");
-
-		index = (arrSize - 1) / 2;
-		if (a[index] == target)
-			return ((a - arr) + index);
-		else if (a[index] > target)
-			arrSize = index;
-		else
-		{
-			a += (index + 1);
-			arrSize -= (index + 1);
-		}
+		printf("%d", arr[i]);
+		if (i + 1 < higher)
+			printf(", ");
 	}
-	return (-1);
+	printf("\n");
+
+	mid = (lower + higher) / 2;
+	if (arr[mid] == key)
+		return (mid);
+
+	if (key < arr[mid])
+		return (binarySearchHelper(arr, key, lower, mid));
+	else
+		return (binarySearchHelper(arr, key, mid, higher));
 }
